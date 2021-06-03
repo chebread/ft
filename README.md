@@ -14,7 +14,7 @@
 #### `ft '(text)' (path)`
 This basics form is **find** a string in a file 🙂
 
-#### `ft '(text)' (directory)`
+#### `ft '(text)' (directory)` (It is demo)
 This form is **find** a stirng in among the files in the directory 🙃
 
 ## Version
