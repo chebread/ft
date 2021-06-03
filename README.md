@@ -5,7 +5,7 @@
 ## How to use
 
 ### Installation
-1. Enter `` at Terminal
+1. Enter `https://github.com/developerHaneum/ft.git` at Terminal
 
 2. Add `.zshrc` to `usr/bin/python3 (Cloned directory path)/exec.py`
 
@@ -18,7 +18,7 @@ This basics form is **find** a string in a file 🙂
 This form is **find** a stirng in among the files in the directory 🙃
 
 ## Version
-Now version: v1.0 (21/6/3)
+Now is a demo version: v1.0 (21/6/3)
 
 ## License
 Use MIT License so everyone can use it 😉
