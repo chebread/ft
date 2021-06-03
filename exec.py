@@ -7,7 +7,12 @@ def Isfile(file):
         return 1
     else:
         return -1
-def Find(path, text):
+def Isdir(path):
+    if os.path.isdir(path):
+        return 1
+    else:
+        return -1
+def FindFile(path, text):
     isfile = Isfile(path)
     if isfile == -1:
         return "0"
@@ -19,6 +24,11 @@ def Find(path, text):
         return -1  # Path 파일에 일치하는  text는 없어요
     else:
         return 1 # 있어요
+def FindDir(path, text):
+    isdir = Isdir(path)
+    if isdir == -1:
+        return "0"
+    # 21/6/4: FindDir을 추가해요
 def TextInput():
     return sys.argv[1]
 def PathInput():
@@ -26,4 +36,7 @@ def PathInput():
 
 text = TextInput()
 path = PathInput()
-print(Find(path, text))
+if path.find("."):
+    print(FindFile(path, text))
+else:
+    print(FindDir(path, text))
