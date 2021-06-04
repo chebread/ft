@@ -37,45 +37,6 @@ File don't be or Directory don't be 😢
 ##### `-1`
 Text don't be at file or Text don't be at Directory 😕
 
-#### Return error of ft
-
-##### `Error: No 'help.md' file`
-1. You should restore 'help.md' file  in ft/doc
-
-    1.2. How to resotre 'help.md' file
-
-        1. Move to the 'ft/doc' directory
-
-        2. Enter `touch help.md`
-
-        3. Enter 'vim help.md'
-
-        4. **Paste** [Held.md](###Help.md) into 'help.md'
-
-        5. Enter `:wq` at vim
-
-        6. Finish !
-2. You should **install** the `ft` again
-
-
-## Help
-
-### Help.md
-This is 'help.md' file
-```
-ft 4.0
-
-USAGE:
-    ft [FLAGS] [<text>] [<path>]
-
-FLAGS:
-    -h, --help          Prints help information
-
-ARGS:
-    <text>              Enter text to find in files in a directory
-    <path>              Enter the name of the file or the directory
-```
-
 ## Version
 Now version: v4.0 (21/6/4)
 
