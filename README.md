@@ -5,9 +5,9 @@
 ## How to use
 
 ### Installation
-1. Enter `https://github.com/developerHaneum/ft.git` at Terminal
+1. Enter `git clone https://github.com/developerHaneum/ft.git` at Terminal
 
-2. Add `.zshrc` to `usr/bin/python3 (Cloned directory path)/exec.py`
+2. Add `.zshrc` to `alias ft="usr/bin/python3 (Cloned directory path)/exec.py"`
 
 ### Basics to use
 
@@ -16,6 +16,8 @@ This basics form is **find** a string in a file 🙂
 
 #### `ft '(text)' (directory)` (It is demo)
 This form is **find** a stirng in among the files in the directory 🙃
+
+**If you don't want to write qutoes, You don't use to write  qutoes ! 🙃**
 
 ### Return value of ft
 
