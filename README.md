@@ -31,7 +31,7 @@ File don't be or Directory don't be 😢
 Text don't be at file or Text don't be at Directory 😕
 
 ## Version
-Now version: v2.0 (21/6/4)
+Now version: v3.0 (21/6/4)
 
 ## License
 Use MIT License so everyone can use it 😉
