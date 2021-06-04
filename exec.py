@@ -47,10 +47,15 @@ def TextInput():
 def PathInput():
     return sys.argv[2]
 def ManHelp():
-    # help 문서 파일 load해요
-    pass
+    isfile = Isfile("doc/help.md")
+    if isfile == -1:
+        return "Error: No help.md file"
+    file = open("doc/help.md", "rb")
+    load = file.read()
+    file.close()
+    return load.decode(encoding="utf-8")
 text = TextInput()
-if text == "--help":
+if text == "-h" or "--help":
     ManHelp()
     sys.exit(0)
 path = PathInput()
