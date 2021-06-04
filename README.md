@@ -11,13 +11,21 @@
 
 ### Basics to use
 
-#### `ft '(text)' (path)`
+### USAGE
+
+#### `ft [FLAGS] '(text)' (path)`
 This basics form is **find** a string in a file 🙂
 
-#### `ft '(text)' (directory)` (It is demo)
+#### `ft [FLAGS] '(text)' (directory)` (It is demo)
 This form is **find** a stirng in among the files in the directory 🙃
 
 **If you don't want to write qutoes, You don't use to write  qutoes ! 🙃**
+
+### FLAGS
+
+#### `ft -h` or `ft --help`
+
+Prints **help** information 😝
 
 ### Return value of ft
 
@@ -30,8 +38,8 @@ File don't be or Directory don't be 😢
 #### `-1`
 Text don't be at file or Text don't be at Directory 😕
 
-## Version
-Now version: v3.0 (21/6/4)
+## [Version](doc/VERSIONS.md)
+Now version: v4.0 (21/6/4)
 
 ## License
 Use MIT License so everyone can use it 😉
