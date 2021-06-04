@@ -47,10 +47,12 @@ def TextInput():
 def PathInput():
     return sys.argv[2]
 def ManHelp():
-    isfile = Isfile("doc/help.md")
+    helpfile = "doc/help.md"
+    isfile = Isfile(helpfile)
     if isfile == -1:
-        return "Error: No help.md file"
-    file = open("doc/help.md", "rb")
+        print("Error: No help.md file")
+        return -1
+    file = open(helpfile, "rb")
     load = file.read()
     file.close()
     print(load.decode(encoding="utf-8"))
