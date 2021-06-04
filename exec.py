@@ -53,7 +53,7 @@ def ManHelp():
     file = open("doc/help.md", "rb")
     load = file.read()
     file.close()
-    return load.decode(encoding="utf-8")
+    print(load.decode(encoding="utf-8"))
 text = TextInput()
 if text == "-h" or "--help":
     ManHelp()
