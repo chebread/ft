@@ -46,9 +46,16 @@ def TextInput():
     return sys.argv[1]
 def PathInput():
     return sys.argv[2]
-
+def ManHelp():
+    # help 문서 파일 load해요
+    pass
 text = TextInput()
+if text == "--help":
+    ManHelp()
+    sys.exit(0)
 path = PathInput()
+if len(sys.argv) > 3:
+    sys.exit(1)
 if path.find(".") == -1: # Dir
     dir = FindDir(path, text)
     if dir == -1:
