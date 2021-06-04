@@ -47,7 +47,7 @@ def TextInput():
 def PathInput():
     return sys.argv[2]
 def ManHelp():
-    helpfile = "doc/help.md"
+    helpfile = ''# .zhsrc에서 ft의 위치(경로)의 값을 가져오면 해결된다.
     isfile = Isfile(helpfile)
     if isfile == -1:
         print("Error: No help.md file")
