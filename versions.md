@@ -48,3 +48,6 @@ Add the FindDir function to not read the `.DS_Store` file
 
 ### v6.4.3
 Add the FindDir function to not read the `.github` file
+
+### v7.0
+Now You can find for a string in any files or directories, files created with the pickle module cannot be finded

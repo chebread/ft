@@ -8,11 +8,13 @@ def Isfile(file):
         return 1
     else:
         return -1
+
 def Isdir(path):
     if os.path.isdir(path):
         return 1
     else:
         return -1
+
 def FindFile(path, text):
     isfile = Isfile(path)
     if isfile == -1:
@@ -25,60 +27,48 @@ def FindFile(path, text):
         return -1  # Path 파일에 일치하는  text는 없어요
     else:
        return 1 # 있어요
+
 def FindDir(path, text): # tests/jotting
-    #print("path: %s"%path)
-    #print("text: %s"%text)
-    isdir = Isdir(path)
-    if isdir == -1:
-        return 0
-    l  = os.listdir(path) # Directroy read
-    # Don't read files and directories
-    if '.git' in l:
-        l.remove('.git')
-    if '.DS_Store' in l:
-        l.remove('.DS_Store')
-    if '.github' in l:
-        l.remove('.github')
-    #print("l: %s"%l)
-    leng = len(l)
-    #print("leng: %s"%leng)
-    extant_dir = ''
-    for i in range(1, leng+1):
-        #print("i1: %s"%i)
-        i -= 1 # list
-        #print("i2: %s"%i) # LIST
-        name = path + "/" + l[i]  # Full name # Basics # tests/jotting # jotting/exec.py
-        #print("name: %s"%name) # tests/jottings :dir :listdir
-        isdir2 = Isdir(name)
-        if isdir2 == 1:
-            return FindDir(name, text)
-        file = open(name, "rb")
-        load = file.read()
-        #print("load: %s"%load)
-        file.close()
-        read  = load.decode(encoding="utf-8") # Bytes -> Str
-        #print("read: %s"%read)
-        #print("read: %s"%read)
-        #print("text: %s"%text)
-        find = read.find(text)
-        #print("find: %s"%find)
-        if read.find(text) == -1:
-            #print("0")
-            pass # 없다면 pass
-        elif read.find(text) != -1:
-            extant = ''
-            extant = "%s\n"%name # file name을 반환해요
-            extant_dir += extant # 값이 차곡차곡 쌓인다
-            #print("ext: %s"%extant_dir)
-        #print(i+1, leng)
-        if i+1 == leng:
-            if extant_dir == '':
-                return -1
-            return extant_dir
+    if Isdir(path) == -1:
+        return 0 # No directory
+    dir_list = os.listdir(path)
+
+    if '.git' in dir_list:
+        dir_list.remove('.git')
+    if '.github' in dir_list:
+        dir_list.remove('.github')
+    if '.DS_Store' in dir_list:
+        dir_list.remove('.DS_Store')
+    leng = len(dir_list) # value
+    exts = ''
+    ext = ''
+    for i in range(1, leng):
+        name = "".join(dir_list[i-1])
+        file = path + '/' + dir_list[i-1]
+        #print("name: %s"%name)
+        #print("file: %s"%file)
+        if name.find(".") != -1: # file
+            f = open(file, "rb")
+            load = f.read()
+            f.close()
+            read = load.decode(encoding="utf-8")
+            find = read.find(text) # -1 or 1~~
+            if find != -1: # 1
+                ext = "%s\n"%file
+                exts = exts + ext
+            if i+1 == leng:
+                if ext == '':
+                    return -1 # No file in dir
+                #print("exts: %s"%)
+                return exts
+        else: # dir
+            dir = FindDir(file, text)
 def TextInput():
     return sys.argv[1]
+
 def PathInput():
     return sys.argv[2]
+
 def NowDir():
     return os.path.dirname(os.path.abspath(__file__))
 def ManHelp():
@@ -116,8 +106,9 @@ def ManIndexErrorHelp(flag):
     file.close()
     print(load.decode(encoding="utf-8")) # Prints
 try:
-    text = '' # NameError를 방지하기 위한 변수 초기화를 해요
+    text = '' # NameError 방지해요
     text = TextInput()
+    # Flags
     if (text.find("-h")==0 or text.find("--h")==0):
         ManHelp()
         sys.exit(0)
@@ -126,20 +117,22 @@ try:
         sys.exit(0)
     path = PathInput()
     if len(sys.argv) > 3:
-        sys.exit(1)
+        sys.exit(1) # 비정상 종료에요
+    # Options
     if path == '*':
         path = os.getcwd()
+        print("getcwd: %s"%path)
     dir = FindDir(path, text)
-    if dir == -1:
-        print(dir) # -1 :dir
-    elif dir == 0:
+    if dir == -1: # -1 of dir
+        print(-1)
+    elif dir == 0: # 0 of dir or file: 1 or -1
         file = FindFile(path, text)
         if file == 0:
-            print(0) # 0: dir, 0:file
+            print(0) # file or dir of No find value
         else:
-            print(file) # 1 or -1 :file
-    else:
+            print(file) # file of 1 or -1
+    else: # 1 of dir
         print(1)
-        print(dir) # 1 \n <file...> :dir
+        print(dir)
 except IndexError:
-    ManIndexErrorHelp(text)
+   ManIndexErrorHelp(text)
