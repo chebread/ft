@@ -39,6 +39,10 @@ File or Directory don't be 😢
 #### `-1`
 Text don't be at file or Text don't be at Directory 😕
 
+## Help
+### 5.2 version shouldn't
+1. If a directory exists inside a directories
+- I will add this function ASAP 😭
 ## Version
 Now version: **v5.2** (21/6/5)
 
