@@ -94,6 +94,8 @@ try:
     path = PathInput()
     if len(sys.argv) > 3:
         sys.exit(1)
+    if path == "*":
+        path = os.getcwd()
     dir = FindDir(path, text)
     if dir == -1:
         print(dir) # -1 :dir
