@@ -36,3 +36,6 @@ Edit return value of FindDir function.
 
 ### v6.2
 Edit bug of FindDir
+
+### v6.3
+Edit the FindDir function to not read the `.git` directory
