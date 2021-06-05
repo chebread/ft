@@ -44,4 +44,7 @@ Edit the FindDir function to not read the `.git` directory
 Edit the FindDir function design to print
 
 ### v6.4.2
-Add the FindDir function to not read the '.DS_Store' file
+Add the FindDir function to not read the `.DS_Store` file
+
+### v6.4.3
+Add the FindDir function to not read the `.github` file

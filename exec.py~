@@ -37,8 +37,6 @@ def FindDir(path, text): # tests/jotting
         l.remove('.git')
     if '.DS_Store' in l:
         l.remove('.DS_Store')
-    if '.github' in l:
-        l.remove('.github')
     #print("l: %s"%l)
     leng = len(l)
     #print("leng: %s"%leng)
