@@ -32,6 +32,8 @@ def FindDir(path, text): # tests/jotting
     if isdir == -1:
         return 0
     l  = os.listdir(path) # Directroy read
+    if '.git' in l:
+        l.remove('.git')
     #print("l: %s"%l)
     leng = len(l)
     #print("leng: %s"%leng)
