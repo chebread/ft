@@ -53,7 +53,7 @@ def ManHelp():
     help_file = now + "/doc/help.md"
     isfile = Isfile(help_file)
     if isfile == -1:
-        print("Error: No help.md file!")
+        print("Error: No help.md file")
         return -1
     file = open(help_file, "rb")
     load = file.read()
@@ -64,30 +64,42 @@ def ManVer():
     ver_file = now + "/doc/version.md"
     isfile = Isfile(ver_file)
     if isfile == -1:
-        print("Error: No version.md file!")
+        print("Error: No version.md file")
         return -1
     file = open(ver_file, "rb")
     load = file.read()
     file.close()
     print(load.decode(encoding="utf-8")) # Prints
-#try:
-text = TextInput()
-if (text=="-h" or text=="--help"):
-    ManHelp()
-    sys.exit(0)
-if (text=="-V" or text=="--version"):
-    ManVer()
-    sys.exit(0)
-path = PathInput()
-if len(sys.argv) > 3:
-    sys.exit(1)
-if path.find(".") == -1: # Dir
-    dir = FindDir(path, text)
-    if dir == -1:
-        pass
-    else:
-        print(dir)
-else: # File
-    print(FindFile(path, text))
-#except IndexError:
-#    ManHelp()
+def ManErrorHelp(flag):
+    print("error: No '%s' flags"%flag)
+    now = NowDir()
+    err_file = now + "/doc/error_help.md"
+    isfile = Isfile(err_file)
+    if isfile == -1:
+        print("Error: No error_help.md file")
+        return -1
+    file = open(err_file, "rb")
+    load = file.read()
+    file.close()
+    print(load.decode(encoding="utf-8")) # Prints
+try:
+    text = TextInput()
+    if (text=="-h" or text=="--help"):
+        ManHelp()
+        sys.exit(0)
+    if (text=="-V" or text=="--version"):
+        ManVer()
+        sys.exit(0)
+    path = PathInput()
+    if len(sys.argv) > 3:
+        sys.exit(1)
+    if path.find(".") == -1: # Dir
+        dir = FindDir(path, text)
+        if dir == -1:
+            pass
+        else:
+            print(dir)
+    else: # File
+        print(FindFile(path, text))
+except IndexError:
+    ManErrorHelp(text)
