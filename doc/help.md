@@ -1,4 +1,4 @@
-ft 6.3
+ft 6.4
 
 USAGE:
     ft [FLAGS] [<text>] [<path>]

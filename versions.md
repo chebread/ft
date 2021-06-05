@@ -39,3 +39,6 @@ Edit bug of FindDir
 
 ### v6.3
 Edit the FindDir function to not read the `.git` directory
+
+### v6.4
+Edit the FindDir function design to print
