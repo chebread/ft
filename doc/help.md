@@ -5,6 +5,7 @@ USAGE:
 
 FLAGS:
     -h, --help          Prints help information
+    -V, --version       Prints version information
 
 ARGS:
     <text>              Enter text to find in files in a directory
