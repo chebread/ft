@@ -97,9 +97,9 @@ try:
     if path.find(".") == -1: # Dir
         dir = FindDir(path, text)
         if dir == -1:
-            pass
+            print(dir) # -1
         else:
-            print(dir)
+            print(dir) # 1 \n <file...>
     else: # File
         print(FindFile(path, text))
 except IndexError:
