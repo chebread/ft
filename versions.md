@@ -33,3 +33,6 @@ Entering `'*'` in `(path)` allows you to find for a string in files in the direc
 
 ### v6.1
 Edit return value of FindDir function.
+
+### v6.2
+Edit bug of FindDir
