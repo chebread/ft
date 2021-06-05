@@ -94,13 +94,16 @@ try:
     path = PathInput()
     if len(sys.argv) > 3:
         sys.exit(1)
-    if path.find(".") == -1: # Dir
-        dir = FindDir(path, text)
-        if dir == -1:
-            print(dir) # -1
+    dir = FindDir(path, text)
+    if dir == -1:
+        print(dir) # -1 :dir
+    elif dir == 0:
+        file = FindFile(path, text)
+        if file == 0:
+            print(0) # 0: dir, 0:file
         else:
-            print(dir) # 1 \n <file...>
-    else: # File
-        print(FindFile(path, text))
+            print(file) # 1 or -1 :file
+    else:
+        print(dir) # 1 \n <file...> :dir
 except IndexError:
     ManIndexErrorHelp(text)
