@@ -35,6 +35,8 @@ def FindDir(path, text): # tests/jotting
     # Don't read files and directories
     if '.git' in l:
         l.remove('.git')
+    if '.DS_Store' in l:
+        l.remove('.DS_Store')
     #print("l: %s"%l)
     leng = len(l)
     #print("leng: %s"%leng)
@@ -47,7 +49,7 @@ def FindDir(path, text): # tests/jotting
         #print("name: %s"%name) # tests/jottings :dir :listdir
         isdir2 = Isdir(name)
         if isdir2 == 1:
-            return FindDir(name, text) # 재귀함수
+            return FindDir(name, text)
         file = open(name, "rb")
         load = file.read()
         #print("load: %s"%load)
