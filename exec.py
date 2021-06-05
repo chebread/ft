@@ -70,7 +70,7 @@ def ManVer():
     load = file.read()
     file.close()
     print(load.decode(encoding="utf-8")) # Prints
-def ManErrorHelp(flag):
+def ManIndexErrorHelp(flag):
     print("error: No '%s' flags"%flag)
     now = NowDir()
     err_file = now + "/doc/error_help.md"
@@ -83,11 +83,12 @@ def ManErrorHelp(flag):
     file.close()
     print(load.decode(encoding="utf-8")) # Prints
 try:
+    text = '' # NameError를 방지하기 위한 변수 초기화를 해요
     text = TextInput()
-    if (text=="-h" or text=="--help"):
+    if (text.find("-h")==0 or text.find("--h")==0):
         ManHelp()
         sys.exit(0)
-    if (text=="-V" or text=="--version"):
+    if (text.find("-v")==0 or text.find("-V")==0 or text.find("--v")==0):
         ManVer()
         sys.exit(0)
     path = PathInput()
@@ -102,4 +103,4 @@ try:
     else: # File
         print(FindFile(path, text))
 except IndexError:
-    ManErrorHelp(text)
+    ManIndexErrorHelp(text)

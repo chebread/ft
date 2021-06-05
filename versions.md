@@ -14,3 +14,7 @@ Edit -h flag error
 
 ### v5.0
 Edit -h flag error, Add -V flag
+
+### v5.1
+1. Add  -h and --help flag function
+2. Edit NameError error
