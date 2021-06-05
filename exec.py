@@ -116,12 +116,10 @@ try:
         ManVer()
         sys.exit(0)
     path = PathInput()
+    if path == '*':
+         path = os.getcwd()
     if len(sys.argv) > 3:
         sys.exit(1) # 비정상 종료에요
-    # Options
-    if path == '*':
-        path = os.getcwd()
-        print("getcwd: %s"%path)
     dir = FindDir(path, text)
     if dir == -1: # -1 of dir
         print(-1)

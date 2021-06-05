@@ -1,15 +1,14 @@
-ft 7.0
+ft 7.0.1
 
 USAGE:
-    ft [FLAGS/OPPTIONS] [<text>] [<path>]
+    ft [FLAGS] [<text>] [<path/OPPTIONS>]
 
 FLAGS:
     -h, --help          Prints help information
     -V, --version       Prints version information
 
 OPPTIONS:
-    '*'                 Find for a string in the currnet directory,
-                        <path> can be omitted
+    '*'                 Find for a string in the currnet directory
 
 ARGS:
     <text>              Enter text to find in files in a directory

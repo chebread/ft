@@ -51,3 +51,6 @@ Add the FindDir function to not read the `.github` file
 
 ### v7.0
 Now You can find for a string in any files or directories, files created with the pickle module cannot be finded
+
+### v7.0.1
+Edit `doc/help.md` file
