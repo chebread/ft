@@ -26,6 +26,8 @@ This form is **find** a stirng in among the files in the directory 🙃
 #### `ft -h` or `ft --help`
 Prints **help** information 😝
 
+#### `ft -V` or `ft --version`
+Prints the information **version** of `ft` 😗
 ### Return value of ft
 
 #### `1`
@@ -38,7 +40,7 @@ File don't be or Directory don't be 😢
 Text don't be at file or Text don't be at Directory 😕
 
 ## Version
-Now version: **v5.0** (21/6/4)
+Now version: **v5.2** (21/6/5)
 
 ## License
 Use **MIT License** so everyone can use it 😉
