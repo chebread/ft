@@ -25,3 +25,8 @@ Edit -h flag error, Add -V flag
 
 ### v5.3
 Entering `'*'` in `(path)` allows you to find for a string in files in the directory you currently belong to 😌
+
+### v6.0
+1. Now you can find files in a directory or file were included to a directories 😎
+
+2. Now you can find the string in any file, All the result of finding all files are printed

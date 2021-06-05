@@ -25,23 +25,39 @@ def FindFile(path, text):
         return -1  # Path 파일에 일치하는  text는 없어요
     else:
        return 1 # 있어요
-def FindDir(path, text):
+def FindDir(path, text): # tests/jotting
+    #print("path: %s"%path)
+    #print("text: %s"%text)
     isdir = Isdir(path)
     if isdir == -1:
         return 0
     l  = os.listdir(path) # Directroy read
+    #print("l: %s"%l)
     leng = len(l)
+    #print("leng: %s"%leng)
+    extant_dir = ''
     for i in range(1, leng+1):
+        #print("i: %s"%i)
         i -= 1 # list
-        name = path + "/" + l[i]  # Full name # Basics
+        name = path + "/" + l[i]  # Full name # Basics # tests/jotting # jotting/exec.py
+        #print("name: %s"%name) # tests/jottings :dir :listdir
+        isdir2 = Isdir(name)
+        if isdir2 == 1:
+            return FindDir(name, text) # 재귀함수
         file = open(name, "rb")
         load = file.read()
         file.close()
         read  = load.decode(encoding="utf-8") # Bytes -> Str
+        #print("read: %s"%read)
         if read.find(text) == -1:
-            return -1
+            pass
         else:
-            return "1\n%s"%name # file name을 반환해요
+            extant = ''
+            extant = "1\n%s\n"%name # file name을 반환해요
+            extant_dir += extant # 값이 차곡차곡 쌓인다
+        if i == leng:
+            return -1
+    return extant_dir
 def TextInput():
     return sys.argv[1]
 def PathInput():
@@ -94,7 +110,7 @@ try:
     path = PathInput()
     if len(sys.argv) > 3:
         sys.exit(1)
-    if path == "*":
+    if path == '*':
         path = os.getcwd()
     dir = FindDir(path, text)
     if dir == -1:
