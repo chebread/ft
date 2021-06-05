@@ -50,14 +50,13 @@ def FindDir(path, text): # tests/jotting
         read  = load.decode(encoding="utf-8") # Bytes -> Str
         #print("read: %s"%read)
         if read.find(text) == -1:
-            pass
+            pass # 없다면 pass
         else:
             extant = ''
             extant = "1\n%s\n"%name # file name을 반환해요
             extant_dir += extant # 값이 차곡차곡 쌓인다
-        if i == leng:
-            return -1
-    return extant_dir
+            return extant_dir # 있다면 ... 의 값을 다 함께 출력
+        return -1 # 찾는 문자열이 없다면
 def TextInput():
     return sys.argv[1]
 def PathInput():
