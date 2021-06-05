@@ -63,7 +63,7 @@ def FindDir(path, text): # tests/jotting
             pass # 없다면 pass
         elif read.find(text) != -1:
             extant = ''
-            extant = "1\n%s\n"%name # file name을 반환해요
+            extant = "%s\n"%name # file name을 반환해요
             extant_dir += extant # 값이 차곡차곡 쌓인다
             #print("ext: %s"%extant_dir)
         #print(i+1, leng)
@@ -135,6 +135,7 @@ try:
         else:
             print(file) # 1 or -1 :file
     else:
+        print(1)
         print(dir) # 1 \n <file...> :dir
 except IndexError:
     ManIndexErrorHelp(text)
