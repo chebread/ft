@@ -11,3 +11,6 @@ mode: Add -h flag
 
 ### v4.0
 Edit -h flag error
+
+### v5.0
+Edit -h flag error, Add -V flag
