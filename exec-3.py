@@ -34,40 +34,38 @@ def FindDir(path, text): # tests/jotting
     l  = os.listdir(path) # Directroy read
     #print("l: %s"%l)
     leng = len(l)
-    #print("leng: %s"%leng)
+    print("leng: %s"%leng)
     extant_dir = ''
     for i in range(1, leng+1):
-        #print("i1: %s"%i)
+        print("i1: %s"%i)
         i -= 1 # list
-        #print("i2: %s"%i) # LIST
+        print("i2: %s"%i) # LIST
         name = path + "/" + l[i]  # Full name # Basics # tests/jotting # jotting/exec.py
-        #print("name: %s"%name) # tests/jottings :dir :listdir
+        print("name: %s"%name) # tests/jottings :dir :listdir
         isdir2 = Isdir(name)
         if isdir2 == 1:
             return FindDir(name, text) # 재귀함수
         file = open(name, "rb")
         load = file.read()
-        #print("load: %s"%load)
+        print("load: %s"%load)
         file.close()
         read  = load.decode(encoding="utf-8") # Bytes -> Str
+        print("read: %s"%read)
         #print("read: %s"%read)
-        #print("read: %s"%read)
-        #print("text: %s"%text)
+        print("text: %s"%text)
         find = read.find(text)
-        #print("find: %s"%find)
+        print("find: %s"%find)
         if read.find(text) == -1:
-            #print("0")
+            print("0")
             pass # 없다면 pass
         elif read.find(text) != -1:
             extant = ''
             extant = "1\n%s\n"%name # file name을 반환해요
             extant_dir += extant # 값이 차곡차곡 쌓인다
-            #print("ext: %s"%extant_dir)
-        #print(i+1, leng)
+            print("ext: %s"%extant_dir)
         if i+1 == leng:
-            if extant_dir == '':
-                return -1
             return extant_dir
+        #return -1
 def TextInput():
     return sys.argv[1]
 def PathInput():
