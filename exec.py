@@ -32,6 +32,7 @@ def FindDir(path, text): # tests/jotting
     if isdir == -1:
         return 0
     l  = os.listdir(path) # Directroy read
+    # Don't read files and directories
     if '.git' in l:
         l.remove('.git')
     #print("l: %s"%l)
