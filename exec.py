@@ -1,4 +1,4 @@
-# Finding Text at file
+# Finding Text at file and directory
 import os.path
 import sys
 import os
@@ -52,7 +52,7 @@ def ManHelp():
     helpfile = dir + file
     isfile = Isfile(helpfile)
     if isfile == -1:
-        print("Error: No help.md file")
+        print("Error: No help.md file!")
         return -1
     file = open(helpfile, "rb")
     load = file.read()
