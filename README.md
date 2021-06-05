@@ -34,7 +34,7 @@ Prints the information **version** of `ft` 😗
 Text be at file or Text be at directory (Directory mode return path, too 😝)
 
 #### `0`
-File don't be or Directory don't be 😢
+File or Directory don't be 😢
 
 #### `-1`
 Text don't be at file or Text don't be at Directory 😕
