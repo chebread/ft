@@ -68,7 +68,7 @@ Edit the FindDir function to return value of -1 (No find to files and directorie
 Edit the FindDir function to return value of -1 of function
 
 ### v7.2.0 (A little important upgrade)
-You can find for a string in uppercase of lowercase letters.
+you can find a string regardless of uppercase and lowercase letters
 
 ### v7.2.1
 Edit the value of result (directory)
@@ -81,3 +81,6 @@ Change `'*' to `!``
 
 ### v7.3.2
 Add expert sentense of 0x80 bytes..
+
+### v7.4.0
+Add functions to v7.2.0 have been corrected

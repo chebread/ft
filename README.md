@@ -13,12 +13,13 @@
 
 ### USAGE
 
-#### `ft [FLAGS] '(text)' (path)`
+#### `ft [FLAGS] '[<text>]' [<path/OPPTIONS>]`
 This basics form is **find** a string in a file and a string in among the files in the directory. 🙂
 
-Entering `!` in `(path)` allows you to find for a string in files in the directory you currently belong to 😌
+### Tips of USAGE
+- **If you don't want to write qutoes, You don't use to write  qutoes ! (Most of case)😉**
 
-**If you don't want to write qutoes, You don't use to write  qutoes ! 😉**
+- **As of v7.2.0, you can find a string regardless of uppercase and lowercase letters**
 
 ### FLAGS
 
@@ -27,6 +28,12 @@ Prints **help** information 😝
 
 #### `ft -V` or `ft --version`
 Prints the information **version** of `ft` 😗
+
+### OPPTIONS
+
+#### `ft <text> !`
+Entering `!` in `(path)` allows you to find for a string in files in the directory you **currently** belong to 😌
+
 ### Return value of ft
 
 #### `1`
@@ -45,7 +52,7 @@ Text don't be at file or Text don't be at Directory 😕
     ~~I will add this function ASAP 😭~~
 
 ## Version
-Now version: **v7.3.2** (21/6/6)
+Now version: **v7.4.0** (21/6/7)
 
 ## License
 Use **MIT License** so everyone can use it 😉
