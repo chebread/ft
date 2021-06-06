@@ -39,15 +39,19 @@ def FindDir(path, text):
     if '.DS_Store' in dir_list:
         dir_list.remove('.DS_Store')
     leng = len(dir_list) # value
+    ext = ''
     for i in range(1, leng+1):
         name = "".join(dir_list[i-1])
         file = path + '/' + dir_list[i-1]
         if name.find(".") != -1: # file
             find = FindFile(file, text)
             if find != -1:
-                print("%s"%file)
+                ext = "%s"%file
+                print("%s"%ext)
         else: # dir
             dir = FindDir(file, text)
+    if ext == '':
+        return -1 # 파일에 찾는 문자열이 없다면
     return 1
 def TextInput():
     return sys.argv[1]
@@ -106,6 +110,7 @@ try:
          path = os.getcwd()
     if len(sys.argv) > 3:
         sys.exit(1) # 비정상 종료에요
+    # Find
     dir = FindDir(path, text)
     if dir == -1: # -1 of dir
         print(-1)
