@@ -54,3 +54,6 @@ Now You can find for a string in any files or directories, files created with th
 
 ### v7.0.1
 Edit `doc/help.md` file
+
+### v7.1.0 (important upgrade)
+Edit the FindDir function bugs, errors 😎
