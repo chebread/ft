@@ -2,7 +2,7 @@
 import os.path
 import sys
 import os
-x = 0
+
 def Isfile(file):
     if os.path.isfile(file):
         return 1
@@ -29,11 +29,10 @@ def FindFile(path, text):
        return 1 # 있어요
 
 def FindDir(path, text): # tests/jotting
-    global x
     if Isdir(path) == -1:
         return 0 # No directory
     dir_list = os.listdir(path)
-    #print("dir_list: %s"%dir_list)
+    print("dir_list: %s"%dir_list)
     if '.git' in dir_list:
         dir_list.remove('.git')
     if '.github' in dir_list:
@@ -41,43 +40,34 @@ def FindDir(path, text): # tests/jotting
     if '.DS_Store' in dir_list:
         dir_list.remove('.DS_Store')
     leng = len(dir_list) # value
-    if x == 0:
-        x = leng # 처음의 lenght의 값을 저장해요
-    if x != 0:
-        pass
-    #print("x = %s"%x)
-    #print("leng: %d"%leng)
+    print("leng: %d"%leng)
     #exts = ''
     ext = ''
     for i in range(1, leng+1):
-        #print("i: %s"%i)
-        name = "".join(dir_list[i-1])
-        file = path + '/' + dir_list[i-1]
-        #print("name: %s"%name)
-        #print("file: %s"%file)
+        print("i: %s"%i)
+        i -= 1
+        name = "".join(dir_list[i])
+        file = path + '/' + dir_list[i]
+        print("name: %s"%name)
+        print("file: %s"%file)
         if name.find(".") != -1: # file
-            find = FindFile(file, text)
-            #f = open(file, "rb")
-            #load = f.read()
-            #f.close()
-            ##load.decode(encoding="utf-8")
-            #find = load.decode(encoding="utf-8").find(text) # -1 or 1~~
-            #print("%d"%find)
+            f = open(file, "rb")
+            load = f.read()
+            f.close()
+            read = load.decode(encoding="utf-8")
+            find = read.find(text) # -1 or 1~~
+            print("find: %s"%find)
             if find != -1: # 1
-                #ext = "%s"%file
-                print("%s"%file)
-            #if x == 1:
-            #    if i == leng:
-            #        if ext == '':
-            #            return -1
-            #        return 1
-            #if x == leng:
-            #    if ext == '':
-            #        return -1
-            #    return 1
+                ext = "%s\n"%file
+                print(ext)
+            if i == leng:
+                if ext == '':
+                    return -1 # No file in dir
+                #print("exts: %s"%)
+                #return exts
+                return 1
         else: # dir
             dir = FindDir(file, text)
-    return 1
 def TextInput():
     return sys.argv[1]
 
@@ -149,3 +139,4 @@ try:
         print(dir)
 except IndexError:
    ManIndexErrorHelp(text)
+
