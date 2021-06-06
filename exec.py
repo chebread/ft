@@ -2,7 +2,6 @@
 import os.path
 import sys
 import os
-x = 0
 def Isfile(file):
     if os.path.isfile(file):
         return 1
@@ -28,12 +27,11 @@ def FindFile(path, text):
     else:
        return 1 # 있어요
 
-def FindDir(path, text): # tests/jotting
+def FindDir(path, text):
     global x
     if Isdir(path) == -1:
         return 0 # No directory
     dir_list = os.listdir(path)
-    #print("dir_list: %s"%dir_list)
     if '.git' in dir_list:
         dir_list.remove('.git')
     if '.github' in dir_list:
@@ -41,40 +39,13 @@ def FindDir(path, text): # tests/jotting
     if '.DS_Store' in dir_list:
         dir_list.remove('.DS_Store')
     leng = len(dir_list) # value
-    if x == 0:
-        x = leng # 처음의 lenght의 값을 저장해요
-    if x != 0:
-        pass
-    #print("x = %s"%x)
-    #print("leng: %d"%leng)
-    #exts = ''
-    ext = ''
     for i in range(1, leng+1):
-        #print("i: %s"%i)
         name = "".join(dir_list[i-1])
         file = path + '/' + dir_list[i-1]
-        #print("name: %s"%name)
-        #print("file: %s"%file)
         if name.find(".") != -1: # file
             find = FindFile(file, text)
-            #f = open(file, "rb")
-            #load = f.read()
-            #f.close()
-            ##load.decode(encoding="utf-8")
-            #find = load.decode(encoding="utf-8").find(text) # -1 or 1~~
-            #print("%d"%find)
-            if find != -1: # 1
-                #ext = "%s"%file
+            if find != -1:
                 print("%s"%file)
-            #if x == 1:
-            #    if i == leng:
-            #        if ext == '':
-            #            return -1
-            #        return 1
-            #if x == leng:
-            #    if ext == '':
-            #        return -1
-            #    return 1
         else: # dir
             dir = FindDir(file, text)
     return 1
@@ -145,7 +116,6 @@ try:
         else:
             print(file) # file of 1 or -1
     else: # 1 of dir
-        #print(1)
         print(dir)
 except IndexError:
    ManIndexErrorHelp(text)

@@ -57,3 +57,6 @@ Edit `doc/help.md` file
 
 ### v7.1.0 (important upgrade)
 Edit the FindDir function bugs, errors 😎
+
+### v7.1.1
+Clean code
