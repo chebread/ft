@@ -3,6 +3,7 @@ import os.path
 import sys
 import os
 x = 0
+y = 0
 def Isfile(file):
     if os.path.isfile(file):
         return 1
@@ -53,7 +54,7 @@ def FindDir(path, text):
             dir = FindDir(file, text)
     if x == 0:
         return -1 # 파일에 찾는 문자열이 없다면
-    return 1
+    return ''#return(0)#sys.exit(0)#return 1
 def TextInput():
     return sys.argv[1]
 
@@ -132,6 +133,12 @@ try:
             else:
                 print(file) # file of 1 or -1
         else: # 1 of dir
-            print(dir)
+            y = 1
+            pass
+            #print(dir)
+            #if i == 2:
+            #    print(1)
+    if y == 1: # 1
+        print(1)
 except IndexError:
    ManIndexErrorHelp(text)
