@@ -66,3 +66,6 @@ Edit the FindDir function to return value of -1 (No find to files and directorie
 
 ### v7.1.3
 Edit the FindDir function to return value of -1 of function
+
+## v7.2.0
+You can find for a string in uppercase of lowercase letters.
