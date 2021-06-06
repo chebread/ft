@@ -59,9 +59,12 @@ def TextInput():
 
 def PathInput():
     return sys.argv[2]
-
 def NowDir():
     return os.path.dirname(os.path.abspath(__file__))
+def TextLower(text):
+    return text.lower()
+def TextUpper(text):
+    return text.upper()
 def ManHelp():
     now = NowDir()
     help_file = now + "/doc/help.md"
@@ -107,21 +110,28 @@ try:
         ManVer()
         sys.exit(0)
     path = PathInput()
+    # Opptions
     if path == '*':
          path = os.getcwd()
     if len(sys.argv) > 3:
         sys.exit(1) # 비정상 종료에요
     # Find
-    dir = FindDir(path, text)
-    if dir == -1: # -1 of dir
-        print(-1)
-    elif dir == 0: # 0 of dir or file: 1 or -1
-        file = FindFile(path, text)
-        if file == 0:
-            print(0) # file or dir of No find value
+    for i in range(1, 3):
+        #print("i: %d"%i)
+        if i == 1:
+            text = TextLower(text)
         else:
-            print(file) # file of 1 or -1
-    else: # 1 of dir
-        print(dir)
+            text = TextUpper(text)
+        dir = FindDir(path, text)
+        if dir == -1: # -1 of dir
+            print(-1)
+        elif dir == 0: # 0 of dir or file: 1 or -1
+            file = FindFile(path, text)
+            if file == 0:
+                print(0) # file or dir of No find value
+            else:
+                print(file) # file of 1 or -1
+        else: # 1 of dir
+            print(dir)
 except IndexError:
    ManIndexErrorHelp(text)
