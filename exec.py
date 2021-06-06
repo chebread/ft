@@ -2,20 +2,22 @@
 import os.path
 import sys
 import os
+
+# Gloabl Variable
 x = 0
 y = 0
+exts = []
+
 def Isfile(file):
     if os.path.isfile(file):
         return 1
     else:
         return -1
-
 def Isdir(path):
     if os.path.isdir(path):
         return 1
     else:
         return -1
-
 def FindFile(path, text):
     isfile = Isfile(path)
     if isfile == -1:
@@ -47,16 +49,15 @@ def FindDir(path, text):
             find = FindFile(file, text)
             if find != -1:
                 x = 0 + 1
-                ext = "%s"%file
-                print("%s"%ext)
+                ext = "%s\n"%file # \n을 추가해서 "".join(exts)해도 줄 바꿈이 괜찮은거에요
+                exts.append(ext)
         else: # dir
             dir = FindDir(file, text)
     if x == 0:
         return -1 # 파일에 찾는 문자열이 없다면
-    return '' # No return of value (1: extant)
+    return "".join(exts) # No return of value (1: extant)
 def TextInput():
     return sys.argv[1]
-
 def PathInput():
     return sys.argv[2]
 def NowDir():
@@ -104,7 +105,6 @@ try:
     text = '' # NameError 방지해요
     text = TextInput()
     # Flags
-    #text = TextLower(text) # Flag 때문에 소문자로 변경해요
     if (text.find("-h")==0 or text.find("--h")==0):
         ManHelp()
         sys.exit(0)
@@ -125,26 +125,30 @@ try:
             text = TextUpper(text)
         dir = FindDir(path, text)
         if dir == -1: # -1 of dir
-            #print(-1)
             y = 3
         elif dir == 0: # 0 of dir or file: 1 or -1
             file = FindFile(path, text)
             if file == 0:
                 y = 2
-                #print(0) # file or dir of No find value
             else:
                 print(file) # file of 1 or -1
         else: # 1
-            #print(1)
            y = 1
+
+    if y == 1:
+        dir = dir.split() # Str -> List
+        set = set(dir) # 중복을 없에요
+        dir = list(set)
+        leng = len(dir)
+        for i in range(1, leng+1):
+            print("".join(dir[i-1]))
+        print(1)
     if y == 2:
         print(0)
-    if y == 1:
-        print(1)
     if y == 3:
         print(-1)
     
 except IndexError:
    ManIndexErrorHelp(text)
-#except UnicodeDecodeError:
-#    pass
+except UnicodeDecodeError: # 만약 못읽는 파일을 읽고 에러가 생기면 pass 처리해요.
+    pass
