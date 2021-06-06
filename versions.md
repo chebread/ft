@@ -75,3 +75,6 @@ Edit the value of result (directory)
 
 ### v7.3.0 (A little important upgrade)
 Edit value of result (all)
+
+### v7.3.1
+Change `'*' to `!``

@@ -66,6 +66,7 @@ def TextLower(text):
 def TextUpper(text):
     return text.upper()
 def ManHelp():
+    ManVer()
     now = NowDir()
     help_file = now + "/doc/help.md"
     isfile = Isfile(help_file)
@@ -103,15 +104,16 @@ try:
     text = '' # NameError 방지해요
     text = TextInput()
     # Flags
-    if (text.find("-h")==0 or text.find("--h")==0):
+    text = TextLower(text) # Flag 때문에 소문자로 변경해요
+    if (text.find("h")==0 or text.find("-h")==0 or text.find("--h")==0):
         ManHelp()
         sys.exit(0)
-    if (text.find("-v")==0 or text.find("-V")==0 or text.find("--v")==0):
+    if (text.find("v")==0 or text.find("-v")==0 or text.find("--v")==0):
         ManVer()
         sys.exit(0)
     path = PathInput()
     # Opptions
-    if path == '*':
+    if (path.find("!")==0):
          path = os.getcwd()
     if len(sys.argv) > 3:
         sys.exit(1) # 비정상 종료에요

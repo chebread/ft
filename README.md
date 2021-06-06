@@ -16,11 +16,9 @@
 #### `ft [FLAGS] '(text)' (path)`
 This basics form is **find** a string in a file and a string in among the files in the directory. 🙂
 
-Entering `'*'` in `(path)` allows you to find for a string in files in the directory you currently belong to 😌
+Entering `!` in `(path)` allows you to find for a string in files in the directory you currently belong to 😌
 
 **If you don't want to write qutoes, You don't use to write  qutoes ! 😉**
-
-**But If you use the `'*'`function, you must enter the quotation marks 😢**
 
 ### FLAGS
 
@@ -47,7 +45,7 @@ Text don't be at file or Text don't be at Directory 😕
     ~~I will add this function ASAP 😭~~
 
 ## Version
-Now version: **v7.3.0** (21/6/6)
+Now version: **v7.3.1** (21/6/6)
 
 ## License
 Use **MIT License** so everyone can use it 😉
