@@ -113,7 +113,7 @@ try:
         sys.exit(0)
     path = PathInput()
     # Opptions
-    if (path.find("!")==0 or path.find("'*'")==0):
+    if path.find("!")==0:
          path = os.getcwd()
     if len(sys.argv) > 3:
         sys.exit(1) # 비정상 종료에요
@@ -146,3 +146,5 @@ try:
     
 except IndexError:
    ManIndexErrorHelp(text)
+except UnicodeDecodeError:
+    pass
