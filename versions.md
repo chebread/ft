@@ -72,3 +72,6 @@ You can find for a string in uppercase of lowercase letters.
 
 ### v7.2.1
 Edit the value of result (directory)
+
+### v7.3.0 (A little important upgrade)
+Edit value of result (all)

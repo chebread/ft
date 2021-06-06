@@ -1,4 +1,4 @@
-ft 7.2.1
+ft 7.3.0
 
 USAGE:
     ft [FLAGS] [<text>] [<path/OPPTIONS>]

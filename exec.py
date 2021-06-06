@@ -28,7 +28,6 @@ def FindFile(path, text):
         return -1  # Path 파일에 일치하는  text는 없어요
     else:
        return 1 # 있어요
-
 def FindDir(path, text):
     global x
     if Isdir(path) == -1:
@@ -124,16 +123,24 @@ try:
             text = TextUpper(text)
         dir = FindDir(path, text)
         if dir == -1: # -1 of dir
-            print(-1)
+            #print(-1)
+            y = 3
         elif dir == 0: # 0 of dir or file: 1 or -1
             file = FindFile(path, text)
             if file == 0:
-                print(0) # file or dir of No find value
+                y = 2
+                #print(0) # file or dir of No find value
             else:
-                print(file) # file of 1 or -1
-        #else: # 1 of dir
-        #    y = 1
-    #if y == 1: # 1
-    print(1)
+                if i == 1:
+                    print(file) # file of 1 or -1
+        else: # 1
+            y = 1
+    if y == 2:
+        print(0)
+    if y == 1:
+        print(1)
+    if y == 3:
+        print(-1)
+    
 except IndexError:
    ManIndexErrorHelp(text)
