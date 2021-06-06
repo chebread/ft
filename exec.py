@@ -54,7 +54,7 @@ def FindDir(path, text):
             dir = FindDir(file, text)
     if x == 0:
         return -1 # 파일에 찾는 문자열이 없다면
-    return ''#return(0)#sys.exit(0)#return 1
+    return '' # No return of value (1: extant)
 def TextInput():
     return sys.argv[1]
 
@@ -118,7 +118,6 @@ try:
         sys.exit(1) # 비정상 종료에요
     # Find
     for i in range(1, 3):
-        #print("i: %d"%i)
         if i == 1:
             text = TextLower(text)
         else:
@@ -134,10 +133,6 @@ try:
                 print(file) # file of 1 or -1
         else: # 1 of dir
             y = 1
-            pass
-            #print(dir)
-            #if i == 2:
-            #    print(1)
     if y == 1: # 1
         print(1)
 except IndexError:
