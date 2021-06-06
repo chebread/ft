@@ -47,7 +47,7 @@ Text don't be at file or Text don't be at Directory 😕
     ~~I will add this function ASAP 😭~~
 
 ## Version
-Now version: **v7.1.2** (21/6/6)
+Now version: **v7.1.3** (21/6/6)
 
 ## License
 Use **MIT License** so everyone can use it 😉

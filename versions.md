@@ -63,3 +63,6 @@ Clean code
 
 ### v7.1.2
 Edit the FindDir function to return value of -1 (No find to files and directories)
+
+### v7.1.3
+Edit the FindDir function to return value of -1 of function
