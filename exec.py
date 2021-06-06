@@ -131,9 +131,9 @@ try:
                 print(0) # file or dir of No find value
             else:
                 print(file) # file of 1 or -1
-        else: # 1 of dir
-            y = 1
-    if y == 1: # 1
-        print(1)
+        #else: # 1 of dir
+        #    y = 1
+    #if y == 1: # 1
+    print(1)
 except IndexError:
    ManIndexErrorHelp(text)
