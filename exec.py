@@ -104,7 +104,7 @@ try:
     text = '' # NameError 방지해요
     text = TextInput()
     # Flags
-    text = TextLower(text) # Flag 때문에 소문자로 변경해요
+    #text = TextLower(text) # Flag 때문에 소문자로 변경해요
     if (text.find("-h")==0 or text.find("--h")==0):
         ManHelp()
         sys.exit(0)
@@ -133,10 +133,10 @@ try:
                 y = 2
                 #print(0) # file or dir of No find value
             else:
-                if i == 1:
-                    print(file) # file of 1 or -1
+                print(file) # file of 1 or -1
         else: # 1
-            y = 1
+            #print(1)
+           y = 1
     if y == 2:
         print(0)
     if y == 1:
@@ -146,5 +146,5 @@ try:
     
 except IndexError:
    ManIndexErrorHelp(text)
-except UnicodeDecodeError:
-    pass
+#except UnicodeDecodeError:
+#    pass

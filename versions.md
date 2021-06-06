@@ -78,3 +78,6 @@ Edit value of result (all)
 
 ### v7.3.1
 Change `'*' to `!``
+
+### v7.3.2
+Add expert sentense of 0x80 bytes..
