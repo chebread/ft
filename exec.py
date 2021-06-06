@@ -105,10 +105,10 @@ try:
     text = TextInput()
     # Flags
     text = TextLower(text) # Flag 때문에 소문자로 변경해요
-    if (text.find("h")==0 or text.find("-h")==0 or text.find("--h")==0):
+    if (text.find("-h")==0 or text.find("--h")==0):
         ManHelp()
         sys.exit(0)
-    if (text.find("v")==0 or text.find("-v")==0 or text.find("--v")==0):
+    if (text.find("-v")==0 or text.find("--v")==0):
         ManVer()
         sys.exit(0)
     path = PathInput()
