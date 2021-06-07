@@ -84,3 +84,6 @@ Add expert sentense of 0x80 bytes..
 
 ### v7.4.0
 Add functions to v7.2.0 have been corrected
+
+### v7.4.1
+Add '*' or '!', too

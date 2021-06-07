@@ -113,10 +113,10 @@ try:
         sys.exit(0)
     path = PathInput()
     # Opptions
-    if path.find("!")==0:
+    if (path.find("!")==0 or path.find("*")==0):
          path = os.getcwd()
     if len(sys.argv) > 3:
-        sys.exit(1) # 비정상 종료에요
+        sys.exit(1)
     # Find
     for i in range(1, 3):
         if i == 1:
@@ -137,7 +137,7 @@ try:
 
     if y == 1:
         dir = dir.split() # Str -> List
-        set = set(dir) # 중복을 없에요
+        set = set(dir)
         dir = list(set)
         leng = len(dir)
         for i in range(1, leng+1):
