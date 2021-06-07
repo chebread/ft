@@ -3,7 +3,7 @@ import os.path
 import sys
 import os
 
-# Gloabl Variable
+# 전역 변수
 x = 0
 y = 0
 exts = []
