@@ -87,3 +87,6 @@ Add functions to v7.2.0 have been corrected
 
 ### v7.4.1
 Add '*' or '!', too
+
+### v7.4.2
+Edit global varibale at file of value
