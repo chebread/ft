@@ -7,6 +7,7 @@ import os
 x = 0
 y = 0
 exts = []
+f = 0
 
 def Isfile(file):
     if os.path.isfile(file):
@@ -130,8 +131,9 @@ try:
             file = FindFile(path, text)
             if file == 0:
                 y = 2
-            else:
-                print(file) # file of 1 or -1
+            else: # file of 1 or -1
+                y = 4
+                f = 0 + file
         else: # 1
            y = 1
 
@@ -147,7 +149,11 @@ try:
         print(0)
     if y == 3:
         print(-1)
-    
+    if (f==1 and y==4):
+        print(1)
+    if (f==-1 and y==4):
+        print(-1)
+
 except IndexError:
     ManIndexErrorHelp(text)
 except UnicodeDecodeError: # 만약 못읽는 파일을 읽고 에러가 생기면 pass 처리해요.
