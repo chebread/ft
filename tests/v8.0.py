@@ -130,8 +130,9 @@ try:
             file = FindFile(path, text)
             if file == 0:
                 y = 2
-            else:
-                print(file) # file of 1 or -1
+            else: # file of 1 -1
+                y = 4
+                #print(file) # file of 1 or -1
         else: # 1
            y = 1
 
@@ -147,6 +148,11 @@ try:
         print(0)
     if y == 3:
         print(-1)
+    if (file == 1 and y == 4):
+        print(1)
+    elif (file == -1 and y == 4):
+        print(-1)
+
     
 except IndexError:
     ManIndexErrorHelp(text)
