@@ -90,3 +90,6 @@ Add '*' or '!', too
 
 ### v7.4.2
 Edit global varibale at file of value
+
+### v7.4.3
+Edit code clean
