@@ -5,8 +5,8 @@ import os
 
 # 전역 변수
 x, y, p = 0, 0, 0
-exts, f = [], []
-dir = ''
+exts = []
+
 def Isfile(file):
     if os.path.isfile(file):
         return 1
@@ -113,7 +113,7 @@ def Opptions():
     if (path.find("!")==0 or path.find("*")==0):
         path = os.getcwd()
 def Print(text, path):
-    global dir, y, f
+    global dir, y
     for i in range(1, 3):
         if i == 1:
             text = TextLower(text)
@@ -126,7 +126,7 @@ def Print(text, path):
             file = FindFile(path, text)
             if file == 0:
                 y = 2
-                f = 0 + file
+                #f = 0 + file
             else: # file of 1 or -1
                 y = 4
         else: # 1
