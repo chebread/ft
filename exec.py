@@ -5,11 +5,9 @@ import sys
 import os
 
 # 전역 변수
-x = 0
-y = 0
+x , y, p = 0, 0, 0
 exts = []
 f = []
-p = 0
 def Isfile(file):
     if os.path.isfile(file):
         return 1
@@ -129,8 +127,7 @@ def ValueReturn(y, dir):
     if (y==4):
         print(1)
 try:
-    text = '' # NameError 방지해요
-    path = ''
+    text, path = '', '' # NameError 방지해요
     text = TextInput()
     # Flags
     Flags(text)
@@ -155,22 +152,8 @@ try:
                 y = 4
         else: # 1
            y = 1
+    # Print value
     ValueReturn(y, dir)
-    #if y == 1:
-    #    dir = dir.split() # Str -> List
-    #    set = set(dir)
-    #    dir = list(set)
-    #    leng = len(dir)
-    #    for i in range(1, leng+1):
-    #        print("".join(dir[i-1]))
-    #    print(1)
-    #if y == 2:
-    #    print(0)
-    #if y == 3:
-    #    print(-1)
-    #if (y==4):
-    #    print(1)
-
 except IndexError:
     ManIndexErrorHelp(text)
 except UnicodeDecodeError: # 만약 못읽는 파일을 읽고 에러가 생기면 pass 처리해요.
