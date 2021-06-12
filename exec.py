@@ -4,7 +4,7 @@ import sys
 import os
 
 # 전역 변수
-x, y, p = 0, 0, 0
+x, y, p, n = 0, 0, 0, 0
 exts = []
 
 def Isfile(file):
@@ -130,9 +130,9 @@ def Print(text, path):
             else: # file of 1 or -1
                 y = 4
         else: # 1
-           y = 1
+            y = 1
 def PrintValue():
-    global dir
+    global dir, path
     if y == 1:
         dir = dir.split() # Str -> List
         set_ = set(dir)
@@ -140,7 +140,8 @@ def PrintValue():
         leng = len(dir)
         for i in range(1, leng+1):
             print("".join(dir[i-1]))
-        print(1)
+        print(i)
+        # 1 말고 파일 개수를 출력해줘요
     if y == 2:
         print(0)
     if y == 3:

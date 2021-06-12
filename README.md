@@ -52,7 +52,7 @@ Text don't be at file or Text don't be at Directory 😕
     ~~I will add this function ASAP 😭~~
 
 ## Version
-Now version: **v7.4.4** (21/6/12)
+Now version: **v7.4.5** (21/6/12)
 
 ## License
 Use **MIT License** so everyone can use it 😉

@@ -96,3 +96,6 @@ Edit code clean
 
 ### v7.4.4
 Edit code clean and fix bugs
+
+### v7.4.5
+Add value of 1 at the PrintValue function
