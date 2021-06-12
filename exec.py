@@ -6,8 +6,8 @@ import os
 
 # 전역 변수
 x , y, p = 0, 0, 0
-exts = []
-f = []
+exts, f = [], []
+
 def Isfile(file):
     if os.path.isfile(file):
         return 1
