@@ -113,24 +113,29 @@ def Flags(text):
 def Opptions(path):
     if (path.find("!")==0 or path.find("*")==0):
         return os.getcwd()
+def ValueReturn(y, dir):
+    if y == 1:
+        dir = dir.split() # Str -> List
+        set_ = set(dir)
+        dir = list(set_)
+        leng = len(dir)
+        for i in range(1, leng+1):
+            print("".join(dir[i-1]))
+        print(1)
+    if y == 2:
+        print(0)
+    if y == 3:
+        print(-1)
+    if (y==4):
+        print(1)
 try:
     text = '' # NameError 방지해요
+    path = ''
     text = TextInput()
     # Flags
-    #if (text.find("-h")==0 or text.find("--h")==0):
-    #    ManHelp()
-    #    sys.exit(0)
-    #if (text.find("-v")==0 or text.find("--v")==0):
-    #    ManVer()
-    #    sys.exit(0)
     Flags(text)
-    path = ''
     path = PathInput()
     # Opptions
-    #if (path.find("!")==0 or path.find("*")==0):
-    #    path = os.getcwd()
-    #if len(sys.argv) > 3:
-    #    sys.exit(1)
     path = Opptions(path)
     # Find
     for i in range(1, 3):
@@ -150,21 +155,21 @@ try:
                 y = 4
         else: # 1
            y = 1
-
-    if y == 1:
-        dir = dir.split() # Str -> List
-        set = set(dir)
-        dir = list(set)
-        leng = len(dir)
-        for i in range(1, leng+1):
-            print("".join(dir[i-1]))
-        print(1)
-    if y == 2:
-        print(0)
-    if y == 3:
-        print(-1)
-    if (y==4):
-        print(1)
+    ValueReturn(y, dir)
+    #if y == 1:
+    #    dir = dir.split() # Str -> List
+    #    set = set(dir)
+    #    dir = list(set)
+    #    leng = len(dir)
+    #    for i in range(1, leng+1):
+    #        print("".join(dir[i-1]))
+    #    print(1)
+    #if y == 2:
+    #    print(0)
+    #if y == 3:
+    #    print(-1)
+    #if (y==4):
+    #    print(1)
 
 except IndexError:
     ManIndexErrorHelp(text)
