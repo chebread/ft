@@ -93,3 +93,6 @@ Edit global varibale at file of value
 
 ### v7.4.3
 Edit code clean
+
+### v7.4.4
+Edit code clean and fix bugs
