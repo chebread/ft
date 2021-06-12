@@ -102,24 +102,36 @@ def ManIndexErrorHelp(flag):
     file = open(err_file, "rb")
     load = file.read()
     file.close()
-    print(load.decode(encoding="utf-8")) # Prints
+    print(load.decode(encoding="utf-8")) # Print
+def Flags(text):
+    if (text.find("-h")==0 or text.find("-H")==0 or text.find("--H")==0 or text.find("--h")==0):
+        ManHelp()
+        return sys.exit(0)
+    if (text.find("-v")==0  or text.find("-V")==0 or text.find("--V")==0 or text.find("--v")==0):
+        ManVer()
+        return sys.exit(0)
+def Opptions(path):
+    if (path.find("!")==0 or path.find("*")==0):
+        return os.getcwd()
 try:
     text = '' # NameError 방지해요
     text = TextInput()
     # Flags
-    if (text.find("-h")==0 or text.find("--h")==0):
-        ManHelp()
-        sys.exit(0)
-    if (text.find("-v")==0 or text.find("--v")==0):
-        ManVer()
-        sys.exit(0)
+    #if (text.find("-h")==0 or text.find("--h")==0):
+    #    ManHelp()
+    #    sys.exit(0)
+    #if (text.find("-v")==0 or text.find("--v")==0):
+    #    ManVer()
+    #    sys.exit(0)
+    Flags(text)
     path = ''
     path = PathInput()
     # Opptions
-    if (path.find("!")==0 or path.find("*")==0):
-         path = os.getcwd()
-    if len(sys.argv) > 3:
-        sys.exit(1)
+    #if (path.find("!")==0 or path.find("*")==0):
+    #    path = os.getcwd()
+    #if len(sys.argv) > 3:
+    #    sys.exit(1)
+    path = Opptions(path)
     # Find
     for i in range(1, 3):
         if i == 1:
