@@ -157,4 +157,4 @@ try:
 except IndexError:
     ManIndexErrorHelp(text)
 except UnicodeDecodeError: # 만약 못읽는 파일을 읽고 에러가 생기면 pass 처리해요.
-    ErrorFind(text, path)
+    pass
