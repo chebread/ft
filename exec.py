@@ -1,4 +1,5 @@
 # Finding Text at file and directory
+import io
 import os.path
 import sys
 import os
@@ -7,8 +8,8 @@ import os
 x = 0
 y = 0
 exts = []
-f = 0
-
+f = []
+p = 0
 def Isfile(file):
     if os.path.isfile(file):
         return 1
@@ -112,6 +113,7 @@ try:
     if (text.find("-v")==0 or text.find("--v")==0):
         ManVer()
         sys.exit(0)
+    path = ''
     path = PathInput()
     # Opptions
     if (path.find("!")==0 or path.find("*")==0):
@@ -131,9 +133,9 @@ try:
             file = FindFile(path, text)
             if file == 0:
                 y = 2
+                f = 0 + file
             else: # file of 1 or -1
                 y = 4
-                f = 0 + file
         else: # 1
            y = 1
 
@@ -149,12 +151,10 @@ try:
         print(0)
     if y == 3:
         print(-1)
-    if (f==1 and y==4):
+    if (y==4):
         print(1)
-    if (f==-1 and y==4):
-        print(-1)
 
 except IndexError:
     ManIndexErrorHelp(text)
 except UnicodeDecodeError: # 만약 못읽는 파일을 읽고 에러가 생기면 pass 처리해요.
-    pass
+    ErrorFind(text, path)
