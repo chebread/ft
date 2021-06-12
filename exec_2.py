@@ -4,9 +4,11 @@ import sys
 import os
 
 # 전역 변수
-x, y, p = 0, 0, 0
-exts, f = [], []
-#dir = ''
+x = 0
+y = 0
+exts = []
+f = []
+p = 0
 def Isfile(file):
     if os.path.isfile(file):
         return 1
@@ -99,25 +101,24 @@ def ManIndexErrorHelp(flag):
     file = open(err_file, "rb")
     load = file.read()
     file.close()
-    print(load.decode(encoding="utf-8")) # Print
-def Flags(text):
-    if (text.find("-h")==0 or text.find("-H")==0 or text.find("--H")==0 or text.find("--h")==0):
-        ManHelp()
-        return sys.exit(0)
-    if (text.find("-v")==0  or text.find("-V")==0 or text.find("--V")==0 or text.find("--v")==0):
-        ManVer()
-        return sys.exit(0)
+    print(load.decode(encoding="utf-8")) # Prints
 try:
-    text, path = '', '' # NameError 방지해요
+    text = '' # NameError 방지해요
     text = TextInput()
     # Flags
-    Flags(text)
+    if (text.find("-h")==0 or text.find("--h")==0):
+        ManHelp()
+        sys.exit(0)
+    if (text.find("-v")==0 or text.find("--v")==0):
+        ManVer()
+        sys.exit(0)
+    path = ''
     path = PathInput()
-    if len(sys.argv) > 3: # 다중 인자 입력 방지
-        sys.exit(1)
     # Opptions
     if (path.find("!")==0 or path.find("*")==0):
-        path = os.getcwd()
+         path = os.getcwd()
+    if len(sys.argv) > 3:
+        sys.exit(1)
     # Find
     for i in range(1, 3):
         if i == 1:
@@ -136,11 +137,11 @@ try:
                 y = 4
         else: # 1
            y = 1
-    # Print value
+
     if y == 1:
         dir = dir.split() # Str -> List
-        set_ = set(dir)
-        dir = list(set_)
+        set = set(dir)
+        dir = list(set)
         leng = len(dir)
         for i in range(1, leng+1):
             print("".join(dir[i-1]))
@@ -151,6 +152,7 @@ try:
         print(-1)
     if (y==4):
         print(1)
+
 except IndexError:
     ManIndexErrorHelp(text)
 except UnicodeDecodeError: # 만약 못읽는 파일을 읽고 에러가 생기면 pass 처리해요.
