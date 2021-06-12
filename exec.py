@@ -7,7 +7,6 @@ import os
 x, y, p = 0, 0, 0
 exts, f = [], []
 dir = ''
-path = ''
 def Isfile(file):
     if os.path.isfile(file):
         return 1
@@ -108,10 +107,11 @@ def Flags(text):
     if (text.find("-v")==0  or text.find("-V")==0 or text.find("--V")==0 or text.find("--v")==0):
         ManVer()
         return sys.exit(0)
-def Opptions():
-    global path
+def Opptions(path):
     if (path.find("!")==0 or path.find("*")==0):
-        path = os.getcwd()
+        return os.getcwd()
+    else:
+        return path
 def Print(text, path):
     global dir, y, f
     for i in range(1, 3):
@@ -131,6 +131,22 @@ def Print(text, path):
                 y = 4
         else: # 1
            y = 1
+def PrintValue():
+    global dir
+    if y == 1:
+        dir = dir.split() # Str -> List
+        set_ = set(dir)
+        dir = list(set_)
+        leng = len(dir)
+        for i in range(1, leng+1):
+            print("".join(dir[i-1]))
+        print(1)
+    if y == 2:
+        print(0)
+    if y == 3:
+        print(-1)
+    if (y==4):
+        print(1)
 try:
     text = '' # NameError 방지해요
     text = TextInput()
@@ -140,7 +156,7 @@ try:
     if len(sys.argv) > 3: # 다중 인자 입력 방지
         sys.exit(1)
     # Opptions
-    Opptions()
+    path = Opptions(path)
     # Find
     #for i in range(1, 3):
     #    if i == 1:
@@ -161,20 +177,22 @@ try:
     #       y = 1
     Print(text, path)
     # Print value
-    if y == 1:
-        dir = dir.split() # Str -> List
-        set_ = set(dir)
-        dir = list(set_)
-        leng = len(dir)
-        for i in range(1, leng+1):
-            print("".join(dir[i-1]))
-        print(1)
-    if y == 2:
-        print(0)
-    if y == 3:
-        print(-1)
-    if (y==4):
-        print(1)
+    #if y == 1:
+    #    dir = dir.split() # Str -> List
+    #    set_ = set(dir)
+    #    dir = list(set_)
+    #    leng = len(dir)
+    #    for i in range(1, leng+1):
+    #        print("".join(dir[i-1]))
+    #    print(1)
+    #if y == 2:
+    #    print(0)
+    #if y == 3:
+    #    print(-1)
+    #if (y==4):
+    #    print(1)
+    PrintValue()
+
 except IndexError:
     ManIndexErrorHelp(text)
 except UnicodeDecodeError: # 만약 못읽는 파일을 읽고 에러가 생기면 pass 처리해요.
