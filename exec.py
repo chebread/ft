@@ -7,7 +7,7 @@ import os
 # 전역 변수
 x , y, p = 0, 0, 0
 exts, f = [], []
-
+dir = ''
 def Isfile(file):
     if os.path.isfile(file):
         return 1
@@ -126,21 +126,15 @@ def ValueReturn(y, dir):
         print(-1)
     if (y==4):
         print(1)
-try:
-    text, path = '', '' # NameError 방지해요
-    text = TextInput()
-    # Flags
-    Flags(text)
-    path = PathInput()
-    # Opptions
-    path = Opptions(path)
-    # Find
+def Print(text):
+    global dir
+    global y, f
     for i in range(1, 3):
         if i == 1:
             text = TextLower(text)
         else:
             text = TextUpper(text)
-        dir = FindDir(path, text)
+        dir = '' + FindDir(path, text)
         if dir == -1: # -1 of dir
             y = 3
         elif dir == 0: # 0 of dir or file: 1 or -1
@@ -152,6 +146,33 @@ try:
                 y = 4
         else: # 1
            y = 1
+try:
+    text, path = '', '' # NameError 방지해요
+    text = TextInput()
+    # Flags
+    Flags(text)
+    path = PathInput()
+    # Opptions
+    path = Opptions(path)
+    # Find
+    Print(text)
+    #for i in range(1, 3):
+    #    if i == 1:
+    #        text = TextLower(text)
+    #    else:
+    #        text = TextUpper(text)
+    #    dir = FindDir(path, text)
+    #    if dir == -1: # -1 of dir
+    #        y = 3
+    #    elif dir == 0: # 0 of dir or file: 1 or -1
+    #        file = FindFile(path, text)
+    #        if file == 0:
+    #            y = 2
+    #            f = 0 + file
+    #        else: # file of 1 or -1
+    #            y = 4
+    #    else: # 1
+    #       y = 1
     # Print value
     ValueReturn(y, dir)
 except IndexError:
