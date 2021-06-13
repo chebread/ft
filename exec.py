@@ -101,13 +101,15 @@ def ManIndexErrorHelp(flag):
     file.close()
     print(load.decode(encoding="utf-8")) # Print
 def Flags():
-    global text
+    global text, path
     if (text.find("-h")==0 or text.find("-H")==0 or text.find("--H")==0 or text.find("--h")==0):
         ManHelp()
         return sys.exit(0)
     if (text.find("-v")==0  or text.find("-V")==0 or text.find("--V")==0 or text.find("--v")==0):
         ManVer()
         return sys.exit(0)
+    if (text.find("-c")==0 or text.find("--c") or text.find("-C")):
+        pass
 def Opptions():
     global path
     if (path.find("!")==0 or path.find("*")==0):
