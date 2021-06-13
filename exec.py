@@ -105,7 +105,6 @@ def ManIndexErrorHelp(flag):
     file.close()
     print(load.decode(encoding="utf-8")) # Print
 def Flags():
-    global text, path
     if (text.find("-h")==0 or text.find("-H")==0 or text.find("--H")==0 or text.find("--h")==0):
         ManHelp()
         return sys.exit(0)

@@ -116,9 +116,12 @@ Edit bug of 'v7.5.2'
 ### v7.5.4
 Edit bug of 'v7.5.3'
 
-### v7.5.5
+### v7.5.5 (Important upgrade)
 1. Edit bug of 'v7.5.4'
 2. Edit bug of FindDir, IndexError
 
 ### v7.5.6
 Edit `help.md` file
+
+### v7.5.7
+Add text of 'versions.md'
