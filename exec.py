@@ -167,11 +167,9 @@ try:
     Print(text, path)
     # Print value
     PrintValue()
-
 except IndexError:
     if (text.find("-")==0):
         ManIndexErrorHelp(text)
-    #if (path == ''): # text == '' 와 text != '' 같은 뜻을 나타내요
     else:
         path = os.getcwd()
         Print(text, path)
