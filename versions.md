@@ -106,3 +106,6 @@ Add value of 1 at the PrintValue function
 
 ### v7.5.1
 If try `ft <text or not blank> (blank)`, you get same print as `ft <text> (! or '*')`
+
+### v7.5.2
+Edit bug of 'v7.5.1'
