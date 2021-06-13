@@ -170,11 +170,5 @@ except IndexError:
     #if (path == ''): # text == '' 와 text != '' 같은 뜻을 나타내요
     else:
         path = os.getcwd()
-        if UnicodeDecodeError:
-            print(0)
-            sys.exit(1)
         Print(text, path)
         PrintValue()
-#except UnicodeDecodeError: # 만약 못읽는 파일을 읽고 에러가 생기면 pass 처리해요.
-#    print(1)
-#    pass
