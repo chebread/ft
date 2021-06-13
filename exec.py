@@ -168,10 +168,6 @@ except IndexError:
         path = os.getcwd()
         Print(text, path)
         PrintValue()
-    #if (text != '' and path == ''):
-    #    path = os.getcwd()
-    #    Print(text, path)
-    #    PrintValue()
     else:
         ManIndexErrorHelp(text)
 except UnicodeDecodeError: # 만약 못읽는 파일을 읽고 에러가 생기면 pass 처리해요.
