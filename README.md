@@ -31,7 +31,7 @@ Prints the information **version** of `ft` 😗
 
 ### OPPTIONS
 
-#### `ft <text> !` or `ft <text> '*'`
+#### `ft <text> !` or `ft <text> '*'` or `ft <text or not blank> (blank)`
 Entering `!`, `*` in `(path)` allows you to find for a string in files in the directory you **currently** belong to 😌
 
 ### Return value of ft
@@ -52,7 +52,7 @@ Text don't be at file or Text don't be at Directory 😕
     ~~I will add this function ASAP 😭~~
 
 ## Version
-Now version: **v7.5.0** (21/6/13)
+Now version: **v7.5.1** (21/6/13)
 
 ## License
 Use **MIT License** so everyone can use it 😉

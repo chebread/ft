@@ -101,5 +101,8 @@ Edit code clean and fix bugs
 Add value of 1 at the PrintValue function
 
 ### v7.5.0
-1. Try `ft (empty) (empty)`, Now you get list of files
+1. If try `ft (blank) (blank)`, Now you get list of files
 2. Print files is sorted 🤩
+
+### v7.5.1
+If try `ft <text or not blank> (blank)`, you get same print as `ft <text> (! or '*')`
