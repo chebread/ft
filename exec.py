@@ -108,8 +108,6 @@ def Flags():
     if (text.find("-v")==0  or text.find("-V")==0 or text.find("--V")==0 or text.find("--v")==0):
         ManVer()
         return sys.exit(0)
-    if (text.find("-c")==0 or text.find("--c") or text.find("-C")):
-        pass
 def Opptions():
     global path
     if (path.find("!")==0 or path.find("*")==0):
@@ -137,8 +135,9 @@ def PrintValue():
     global dir, path
     if y == 1:
         dir = dir.split() # Str -> List
-        set_ = set(dir)
+        set_ = set(dir) # 순서가 바뀌어요
         dir = list(set_)
+        dir.sort()
         leng = len(dir)
         for i in range(1, leng+1):
             print("".join(dir[i-1]))
@@ -151,7 +150,7 @@ def PrintValue():
     if (y==4):
         print(1)
 try:
-    text = '' # NameError 방지해요
+    text, path = '', '' # NameError 방지해요
     text = TextInput()
     # Flags
     Flags()
@@ -165,6 +164,11 @@ try:
     # Print value
     PrintValue()
 except IndexError:
-    ManIndexErrorHelp(text)
+    if (text == '' and path == ''):
+        path = os.getcwd()
+        Print(text, path)
+        PrintValue()
+    else:
+        ManIndexErrorHelp(text)
 except UnicodeDecodeError: # 만약 못읽는 파일을 읽고 에러가 생기면 pass 처리해요.
     pass

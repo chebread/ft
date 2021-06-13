@@ -99,3 +99,7 @@ Edit code clean and fix bugs
 
 ### v7.4.5
 Add value of 1 at the PrintValue function
+
+### v7.5.0
+1. Try `ft (empty) (empty)`, Now you get list of files
+2. Print files is sorted 🤩
