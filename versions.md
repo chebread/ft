@@ -109,3 +109,6 @@ If try `ft <text or not blank> (blank)`, you get same print as `ft <text> (! or 
 
 ### v7.5.2
 Edit bug of 'v7.5.1'
+
+### v7.5.3
+Edit bug of 'v7.5.1'
