@@ -115,3 +115,7 @@ Edit bug of 'v7.5.2'
 
 ### v7.5.4
 Edit bug of 'v7.5.3'
+
+### v7.5.5
+1. Edit bug of 'v7.5.4'
+2. Edit bug of FindDir, IndexError

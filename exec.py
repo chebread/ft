@@ -31,30 +31,34 @@ def FindFile(path, text):
        return 1 # 있어요
 def FindDir(path, text):
     global x
-    if Isdir(path) == -1:
-        return 0 # No directory
-    dir_list = os.listdir(path)
-    if '.git' in dir_list:
-        dir_list.remove('.git')
-    if '.github' in dir_list:
-        dir_list.remove('.github')
-    if '.DS_Store' in dir_list:
-        dir_list.remove('.DS_Store')
-    leng = len(dir_list) # value
-    for i in range(1, leng+1):
-        name = "".join(dir_list[i-1])
-        file = path + '/' + dir_list[i-1]
-        if name.find(".") != -1: # file
-            find = FindFile(file, text)
-            if find != -1:
-                x = 0 + 1
-                ext = "%s\n"%file # \n을 추가해서 "".join(exts)해도 줄 바꿈이 괜찮은거에요
-                exts.append(ext)
-        else: # dir
-            dir = FindDir(file, text)
-    if x == 0:
-        return -1 # 파일에 찾는 문자열이 없다면
-    return "".join(exts) # No return of value (1: extant)
+    try:
+        if Isdir(path) == -1:
+            return 0 # No directory
+        dir_list = os.listdir(path)
+        if '.git' in dir_list:
+            dir_list.remove('.git')
+        if '.github' in dir_list:
+            dir_list.remove('.github')
+        if '.DS_Store' in dir_list:
+            dir_list.remove('.DS_Store')
+        leng = len(dir_list) # value
+        for i in range(1, leng+1):
+            name = "".join(dir_list[i-1])
+            file = path + '/' + dir_list[i-1]
+            if name.find(".") != -1: # file
+                find = FindFile(file, text)
+                if find != -1:
+                    x = 0 + 1
+                    ext = "%s\n"%file # \n을 추가해서 "".join(exts)해도 줄 바꿈이 괜찮은거에요
+                    exts.append(ext)
+            else: # dir
+                dir = FindDir(file, text)
+        if x == 0:
+            return -1 # 파일에 찾는 문자열이 없다면
+        return "".join(exts) # No return of value (1: extant)
+    except UnicodeDecodeError: # 만약 못읽는 파일이 나오면 비정상 종료를 해요
+        print(0)
+        sys.exit(1)
 def TextInput():
     return sys.argv[1]
 def PathInput():
