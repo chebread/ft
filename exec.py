@@ -4,7 +4,7 @@ import sys
 import os
 
 # 전역 변수
-x, y, p, i = 0, 0, 0, 0
+x, y, p = 0, 0, 0
 exts = []
 
 def Isfile(file):
