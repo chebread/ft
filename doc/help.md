@@ -1,5 +1,5 @@
 USAGE:
-    ft [FLAGS] [<text>] [<path/OPPTIONS>]
+    ft [<FLAGS/text>] [<OPPTIONS/path>]
 
 FLAGS:
     -h, --help          Prints help information

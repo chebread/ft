@@ -4,7 +4,7 @@ import sys
 import os
 
 # 전역 변수
-x, y, p, n = 0, 0, 0, 0
+x, y, p, i = 0, 0, 0, 0
 exts = []
 
 def Isfile(file):
@@ -167,7 +167,7 @@ try:
     Print(text, path)
     # Print value
     PrintValue()
-except IndexError:
+except IndexError: # sys.argv의 인자가 충분히 제공 되지 않았을때
     if (text.find("-")==0):
         ManIndexErrorHelp(text)
     else:
