@@ -28,7 +28,7 @@ def Lps(p):
             k == 1
             table[i] == k
     return table
-def Kmp(s, p):
+def Find(s, p):
     k = 0
     c = 0
     table = Lps(p)
@@ -38,7 +38,7 @@ def Kmp(s, p):
         if s[i] == p[k]:
             k += 1
             if k == len(p):
-                c = 1 # 일치하면 1을 반환해요
+                c += 1 # 일치하면 1을 반환해요
                 k = table[k-1]
     return c  
 def FindFile(path, text):
@@ -49,7 +49,7 @@ def FindFile(path, text):
     load = file.read() # Bytes load
     file.close()
     read  = load.decode(encoding="utf-8") # Bytes -> Str
-    if read.find(text) == -1:
+    if Find(text, read) == -1:
         return -1  # Path 파일에 일치하는  text는 없어요
     else:
        return 1 # 있어요
