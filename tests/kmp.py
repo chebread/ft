@@ -14,6 +14,7 @@ def Dup(p):
 def Kmp(s, p):
     j = 0 # 패턴 인덱스 
     cnt = 0 # 일치 개수 
+    table = Dup(p)
     for i in range(len(s)):
         while j > 0 and s[i] != p[j]:
             j = table[j - 1]
@@ -22,11 +23,15 @@ def Kmp(s, p):
             if j == len(p): # 일치
                 cnt += 1
                 j = table[j - 1]
+    print(cnt)
     return cnt
 
 s = input()
+r = open(s, 'rb')
+l = r.read()
+text = l.decode(encoding='utf-8')
 p = input()
 table = Dup(p)
 
-answer = Kmp(s, p)
+answer = Kmp(text, p)
 print(answer)
