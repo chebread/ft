@@ -23,24 +23,24 @@ def Lps(p):
     k = 0
     for i in range(1, n):
         while k > 0 and p[i] != p[k]:
-            k = table[k-1]
+            k = table[k - 1]
         if p[i] == p[k]:
-            k == 1
-            table[i] == k
+            k += 1
+            table[i] = k
     return table
 def Find(s, p):
     k = 0
     c = 0
     table = Lps(p)
     for i in range(len(s)):
-        while k > 0  and s[i] != p[k]:
-            k = table[k-1]
+        while k > 0 and s[i] != p[k]:
+            k = table[k - 1]
         if s[i] == p[k]:
             k += 1
             if k == len(p):
-                c += 1 # 일치하면 1을 반환해요
-                k = table[k-1]
-    return c  
+                c = 1
+                k = table[k - 1]
+    return c # 0이나 1만 반환되요
 def FindFile(path, text):
     isfile = Isfile(path)
     if isfile == -1:
@@ -48,11 +48,11 @@ def FindFile(path, text):
     file = open(path, "rb")
     load = file.read() # Bytes load
     file.close()
-    read  = load.decode(encoding="utf-8") # Bytes -> Str
-    if Find(text, read) == -1:
-        return -1  # Path 파일에 일치하는  text는 없어요
+    read = load.decode(encoding="utf-8") # Bytes -> Str
+    if Find(read, text) > 0:
+        return 1
     else:
-       return 1 # 있어요
+       return -1
 def FindDir(path, text):
     global x
     try:
@@ -177,7 +177,7 @@ def PrintValue():
     if (y==4):
         print(1)
 try:
-    text, path = '', '' # NameError 방지해요
+    text, path = ' ', ' ' # NameError 방지해요
     text = TextInput()
     # Flags
     Flags()
