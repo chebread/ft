@@ -125,3 +125,6 @@ Edit `help.md` file
 
 ### v7.5.7
 Add text of 'versions.md'
+
+### v7.6.0 (A little important upgrade)
+Edit the indFile in find() function. The find() function has been changed to the KMP algorithm, The KMP algorithm is definded as the Find() fucntion 😎

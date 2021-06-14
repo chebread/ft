@@ -5,5 +5,3 @@ It empty repository
 
 ### 'Releases'
 It's releases of `ft`
-
-###

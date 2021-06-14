@@ -34,7 +34,7 @@ def Find(s, p):
     table = Lps(p)
     for i in range(len(s)):
         while k > 0  and s[i] != p[k]:
-            k = table[j-1]
+            k = table[k-1]
         if s[i] == p[k]:
             k += 1
             if k == len(p):
