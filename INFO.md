@@ -1,7 +1,8 @@
-# Informations
+# Info
+The find function of `ft` use the KMP algorithm
 
-### `Pull Requests`
-It empty repository
+### Pull Requests
+This blank repository
 
-### 'Releases'
-It's releases of `ft`
+### Release
+This release of `ft`

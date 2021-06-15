@@ -131,3 +131,7 @@ Edit the indFile in find() function. The find() function has been changed to the
 
 ### v7.6.1 (Important upgrade)
 Edit bug of v7.6.0
+
+### v7.6.2 (Important upgrade)
+1. Edit bug of v7.6.0
+2. Edit the 'readme.md' file
