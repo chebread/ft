@@ -1,4 +1,4 @@
-# Info
+# Infomation
 The find function of `ft` use the KMP algorithm
 
 ### Pull Requests
