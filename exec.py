@@ -22,10 +22,11 @@ def Table(text):
     table = [0] * n
     m = 0
     for i in range(1, n):
-        m = table[m-1]
-    if text[i] == p[m]:
-        m += 1
-        table[i] == m
+        while m > 0 and text[i] != p[m]:
+            m = table[m-1]
+        if text[i] == p[m]:
+            m += 1
+            table[i] = m
     return table
 def Find(target, text):
     c = 0 # count
@@ -37,9 +38,9 @@ def Find(target, text):
         if target[i] == text[m]:
             m += 1
             if m == len(text):
-                c += 1
+                c = 1
                 m = table[m-1]
-        return c
+    return c
 def FindFile(path, text):
     isfile = Isfile(path)
     if isfile == -1:
