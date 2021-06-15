@@ -51,6 +51,9 @@ Text don't be at file or Text don't be at Directory 😕
 
     ~~I will add this function ASAP 😭~~
 
+### how to use of `ft '  ' !` or `ft (blank) (blank)`
+These likes the function of `ft (text) (blank)` 🤩
+
 ## Version
 Now version: **v7.6.3** (21/6/15)
 
