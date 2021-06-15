@@ -139,3 +139,6 @@ Edit bug of v7.6.0
 ### v7.6.3 (Important upgrade)
 1. Edit bug of v7.6.2
 2. Edit bug of `ft`
+
+### v7.6.4
+Edit the fucntion Find of the bug
