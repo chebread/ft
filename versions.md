@@ -142,3 +142,6 @@ Edit bug of v7.6.0
 
 ### v7.6.4
 Edit the fucntion Find of the bug
+
+### v7.6.5
+Edit bugs of `ft`

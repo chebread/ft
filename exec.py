@@ -40,7 +40,7 @@ def Find(target, text):
         if target[i] == text[m]:
             m += 1
             if m == len(text):
-                c = 1
+                c += 1 # conut += 1
                 m = table[m-1]
     return c
 def FindFile(path, text):
@@ -131,12 +131,19 @@ def ManIndexErrorHelp(flag):
     file.close()
     print(load.decode(encoding="utf-8")) # Print
 def Flags():
-    if (text.find("-h")==0 or text.find("-H")==0 or text.find("--H")==0 or text.find("--h")==0):
-        ManHelp()
-        return sys.exit(0)
-    if (text.find("-v")==0  or text.find("-V")==0 or text.find("--V")==0 or text.find("--v")==0):
-        ManVer()
-        return sys.exit(0)
+    global text
+    cp_text = text # 복사본으로 이용해요
+    for i in range(1, 3):
+        if i == 1:
+            cp_text = TextLower(cp_text)
+        else:
+            cp_text = TextUpper(cp_text)
+        if (cp_text.find('-h')==0 or cp_text.find('--h')==0):
+            ManHelp()
+            return sys.exit(0)
+        if (cp_text.find('-v')==0 or cp_text.find('--v')==0):
+            ManVer()
+            return sys.exit(0)
 def Opptions():
     global path
     if (path.find("!")==0 or path.find("*")==0):

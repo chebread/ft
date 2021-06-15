@@ -55,7 +55,7 @@ Text don't be at file or Text don't be at Directory 😕
 These likes the function of `ft (text) (blank)` 🤩
 
 ## Version
-Now version: **v7.6.4** (21/6/15)
+Now version: **v7.6.5** (21/6/15)
 
 ## License
 Use **MIT License** so everyone can use it 😉
