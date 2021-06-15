@@ -133,5 +133,9 @@ Edit the indFile in find() function. The find() function has been changed to the
 Edit bug of v7.6.0
 
 ### v7.6.2 (Important upgrade)
-1. Edit bug of v7.6.0
+1. Edit bug of v7.6.1
 2. Edit the 'readme.md' file
+
+### v7.6.3 (Important upgrade)
+1. Edit bug of v7.6.2
+2. Edit bug of `ft`
