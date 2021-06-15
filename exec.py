@@ -22,9 +22,9 @@ def Table(text):
     table = [0] * n
     m = 0
     for i in range(1, n):
-        while m > 0 and text[i] != p[m]:
+        while m > 0 and text[i] != text[m]:
             m = table[m-1]
-        if text[i] == p[m]:
+        if text[i] == text[m]:
             m += 1
             table[i] = m
     return table
