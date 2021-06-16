@@ -9,6 +9,9 @@
 
 2. Add `.zshrc` to `alias ft="usr/bin/python3 (Cloned directory path)/exec.py"`
 
+### How to use `man ft`
+Enter `cp (Clone directory path of `ft`)/doc/ft.1 /usr/local/share/man/man1/ft.1` at Terminal
+
 ### Basics to use
 
 ### USAGE
@@ -55,7 +58,7 @@ Text don't be at file or Text don't be at Directory 😕
 These likes the function of `ft (text) (blank)` 🤩
 
 ## Version
-Now version: **v7.6.5** (21/6/15)
+Now version: **v7.6.6** (21/6/16)
 
 ## License
 Use **MIT License** so everyone can use it 😉

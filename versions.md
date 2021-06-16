@@ -145,3 +145,6 @@ Edit the fucntion Find of the bug
 
 ### v7.6.5
 Edit bugs of `ft`
+
+### v7.6.6
+Add the function of man

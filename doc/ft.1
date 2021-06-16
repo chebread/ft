@@ -1,0 +1,33 @@
+.TH FT 1
+.SH NAME
+ft \- a plugin that find for a string in a file
+.SH SYNDOPSIS
+.B ft
+.RB [FLAGS/<text>]
+.RB [OPPTIONS/<path>]
+.SH DESCRIPTION
+.B It is familiar to use and a little bit like ripgrep
+.SH FLAGS
+.TP
+.B \-h, \-\-help
+Prints help information
+.TP
+.B \-V, \-\-version
+Prints version information
+.SH OPPTIONS
+.TP
+.B '!', (blank)
+Find for a string in the currnet directory
+.SH EXAMPLES
+.TP
+.RI "If you find 'text' in the " jottings " file:"
+$ ft text jottings
+.TP
+.RI "If you find 'text' in a the " diary " directory:"
+$ ft text diary
+.TP
+.RI "If you print files in the " diary " directory(1):"
+$ ft '' diary
+.TP
+.RI "If the current directory location is diary(2):"
+$ ft
