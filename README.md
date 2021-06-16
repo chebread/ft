@@ -17,7 +17,7 @@
 ### USAGE
 
 #### `ft [FLAGS] '[<text>]' [<path/OPPTIONS>]`
-This basics form is **find** a string in a file and a string in among the files in the directory. 🙂
+This basics form is **find** a string in a file and a string in among the files in the directory. 🤩
 
 ### Tips of USAGE
 - **If you don't want to write qutoes, You don't use to write  qutoes ! (Most of case)😉**
