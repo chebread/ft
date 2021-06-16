@@ -5,12 +5,12 @@
 ## How to use
 
 ### Installation
-1. Enter `git clone https://github.com/developerHaneum/ft.git` at Terminal
+1. **Enter** `git clone https://github.com/developerHaneum/ft.git` at Terminal
 
-2. Add `.zshrc` to `alias ft="usr/bin/python3 (Cloned directory path)/exec.py"`
+2. **Add** `.zshrc` to `alias ft="usr/bin/python3 (Cloned directory path)/exec.py"`
 
 ### How to use `man ft`
-Enter `cp (Clone directory path of `ft`)/doc/ft.1 /usr/local/share/man/man1/ft.1` at Terminal
+**Enter** `cp (Clone directory path of 'ft')/doc/ft.1 /usr/local/share/man/man1/ft.1` at Terminal
 
 ### Basics to use
 
@@ -39,7 +39,7 @@ Entering `!`, `*` in `(path)` allows you to find for a string in files in the di
 
 ### Return value of ft
 
-#### `1`
+#### `1` or `(Numbers)`
 Text be at file or Text be at directory (Directory mode return path, too 😝)
 
 #### `0`
