@@ -1,7 +1,6 @@
 # ft
 
-`ft` is a plugin that find for a string in a file 😎 It a little bit like [`ripgrep`](https://github.com/BurntSushi/ripgrep)
-
+`ft` is a plugin that find for a string in a file 😎 It a little bit like [`ripgrep`](https://github.com/BurntSushi/ripgrep), ['fd'](https://github.com/sharkdp/fd)
 ## How to use
 
 ### Installation
