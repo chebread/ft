@@ -148,3 +148,6 @@ Edit bugs of `ft`
 
 ### v7.6.6
 Add the function of man
+
+### v7.6.7
+Add the fucntion of all file to find 😎

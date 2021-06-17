@@ -82,9 +82,8 @@ def FindDir(path, text):
         if x == 0:
             return -1 # 파일에 찾는 문자열이 없다면
         return "".join(exts) # No return of value (1: extant)
-    except UnicodeDecodeError: # 만약 못읽는 파일이 나오면 비정상 종료를 해요
-        print(0)
-        sys.exit(1)
+    except UnicodeDecodeError: # 만약 못읽는 파일이 나오면 못읽는 파일은 읽지 않아요
+        pass
 def TextInput():
     return sys.argv[1]
 def PathInput():

@@ -54,11 +54,11 @@ Text don't be at file or Text don't be at Directory 😕
 
     ~~I will add this function ASAP 😭~~
 
-### how to use of `ft '' !` or `ft (blank) (blank)`
-These likes the function of `ft (text) (blank)` 🤩
+### How to use of `ft '' !` or `ft (blank) (blank)`
+It **find** for a string in **all files** in the directory you currently belong to 🥳
 
 ## Version
-Now version: **v7.6.6** (21/6/16)
+Now version: **v7.6.7** (21/6/17)
 
 ## License
 Use **MIT License** so everyone can use it 😉
