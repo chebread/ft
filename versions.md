@@ -151,3 +151,6 @@ Add the function of man
 
 ### v7.6.7
 Add the fucntion of all file to find 😎
+
+### v7.6.8
+Edit print of file-list. It don't view of all file-list, Now view short file-list 🤩

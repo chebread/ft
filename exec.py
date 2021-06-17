@@ -175,7 +175,7 @@ def PrintValue():
         dir.sort()
         leng = len(dir)
         for i in range(1, leng+1):
-            print("".join(dir[i-1]))
+            print("".join(dir[i-1]).replace(path+'/', ""))
         print(i)
         # 1 말고 파일 개수를 출력해줘요
     if y == 2:
