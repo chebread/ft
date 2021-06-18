@@ -15,7 +15,7 @@
 
 ### USAGE
 
-#### `ft [FLAGS] '[<text>]' [<path/OPPTIONS>]`
+#### `ft [FLAGS/<text>] [OPPTIONS/<path>]`
 This basics form is **find** a string in a file and a string in among the files in the directory. 🤩
 
 ### Tips of USAGE
