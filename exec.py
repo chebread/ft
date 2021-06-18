@@ -2,7 +2,7 @@
 import os.path
 import sys
 import os
-
+from clint.textui import *
 # 전역 변수
 x, y, p = 0, 0, 0
 exts = []
@@ -84,6 +84,8 @@ def FindDir(path, text):
         return "".join(exts) # No return of value (1: extant)
     except UnicodeDecodeError: # 만약 못읽는 파일이 나오면 못읽는 파일은 읽지 않아요
         pass
+    except PermissionError:
+        return sys.exit(1)
 def TextInput():
     return sys.argv[1]
 def PathInput():
@@ -168,22 +170,25 @@ def Print(text, path):
             y = 1
 def PrintValue():
     global dir, path
-    if y == 1:
-        dir = dir.split() # Str -> List
-        set_ = set(dir) # 순서가 바뀌어요
-        dir = list(set_)
-        dir.sort()
-        leng = len(dir)
-        for i in range(1, leng+1):
-            print("".join(dir[i-1]).replace(path+'/', ""))
-        print(i)
-        # 1 말고 파일 개수를 출력해줘요
-    if y == 2:
-        print(0)
-    if y == 3:
-        print(-1)
-    if (y==4):
-        print(1)
+    try:
+        if y == 1:
+            dir = dir.split() # Str -> List
+            set_ = set(dir) # 순서가 바뀌어요
+            dir = list(set_)
+            dir.sort()
+            leng = len(dir)
+            for i in range(1, leng+1):
+                print("".join(dir[i-1]).replace(path+'/', ""))
+            print(i)
+            # 1 말고 파일 개수를 출력해줘요
+        if y == 2:
+            print(0)
+        if y == 3:
+            print(-1)
+        if (y==4):
+            print(1)
+    except AttributeError:
+        pass
 try:
     text, path = ' ', ' ' # NameError 방지해요
     text = TextInput()
