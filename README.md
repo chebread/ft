@@ -36,7 +36,7 @@ Prints the information **version** of `ft` 😗
 #### `ft <text> !` or `ft <text> '*'` or `ft <text or not blank> (blank)`
 Entering `!`, `*` in `(path)` allows you to find for a string in files in the directory you **currently** belong to 😌
 
-### Return value of ft
+### Return value of `ft`
 
 #### `1` or `(Numbers)`
 Text be at file or Text be at directory (Directory mode return path, too 😝)
@@ -46,6 +46,20 @@ File or Directory don't be 😢
 
 #### `-1`
 Text don't be at file or Text don't be at Directory 😕
+
+### Return color of `ft`
+
+#### Blue
+It mean is directories
+
+#### Green
+It mean is directories in files
+
+#### Yellow
+It mean is files
+
+#### White
+It mean is a number
 
 ## Help
 ### ~~5.2 version shouldn't~~ -> **v6.0 was resolved in version** 🤩
@@ -57,7 +71,7 @@ Text don't be at file or Text don't be at Directory 😕
 It **find** for a string in **all files** in the directory you currently belong to 🥳
 
 ## Version
-Now version: **v7.6.7** (21/6/17)
+Now version: **v7.7.0** (21/6/18)
 
 ## License
 Use **MIT License** so everyone can use it 😉
