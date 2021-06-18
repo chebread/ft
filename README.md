@@ -50,16 +50,16 @@ Text don't be at file or Text don't be at Directory 😕
 ### Return color of `ft`
 
 #### Blue
-It mean is directories
+It mean is **directories**
 
 #### Green
-It mean is directories in files
+It mean is directories in **files**
 
 #### Yellow
-It mean is files
+It mean is **files**
 
 #### White
-It mean is a number
+It mean is a **number**
 
 ## Help
 ### ~~5.2 version shouldn't~~ -> **v6.0 was resolved in version** 🤩
