@@ -71,7 +71,7 @@ It mean is a **number**
 It **find** for a string in **all files** in the directory you currently belong to 🥳
 
 ## Version
-Now version: **v7.7.0.0** (21/6/19)
+Now version: **v7.7.0** (21/6/18)
 
 ## License
 Use **MIT License** so everyone can use it 😉
