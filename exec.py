@@ -4,7 +4,7 @@ import sys
 import os
 from clint.textui import *
 # 전역 변수
-x, y, p = 0, 0, 0
+x, y, p, q = 0, 0, 0, []
 exts = []
 
 def Isfile(file):
@@ -51,10 +51,10 @@ def FindFile(path, text):
     load = file.read() # Bytes load
     file.close()
     read = load.decode(encoding="utf-8") # Bytes -> Str
-    if Find(read, text) > 0:
+    if Find(read, text) != 0:
         return 1
     else:
-       return -1
+        return -1
 def FindDir(path, text):
     global x
     try:
@@ -150,7 +150,7 @@ def Opptions():
     if (path.find("!")==0 or path.find("*")==0):
         path = os.getcwd()
 def Print(text, path):
-    global dir, y
+    global dir, y, p, q
     for i in range(1, 3):
         if i == 1:
             text = TextLower(text)
@@ -166,6 +166,9 @@ def Print(text, path):
                 #f = 0 + file
             else: # file of 1 or -1
                 y = 4
+                #print("file: %s"%file)
+                q.append(file)
+                #print("q: %s"%q)
         else: # 1
             y = 1
 def PrintValue():
@@ -194,8 +197,12 @@ def PrintValue():
             print(0)
         if y == 3:
             print(-1)
-        if (y==4):
-            print(1)
+        if y == 4:
+            for i in range(1, 3):
+                if q[i-1] == 1:
+                    print(1)
+                    sys.exit(0)
+            print(-1)
     except AttributeError:
         pass
 try:

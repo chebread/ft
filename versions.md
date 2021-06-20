@@ -157,3 +157,6 @@ Edit print of file-list. It don't view of all file-list, Now view short file-lis
 
 ### v7.7.0 (Important upgrade)
 Add the function of color, It look better when you look at the print 🥳
+
+### v7.7.1 (Important upgrade)
+Edit the PrintValue function of bugs
