@@ -95,7 +95,7 @@ But It isn't enough level of completion 🥲
 
 ## Version
 
-Now version: **v7.7.1** (21/6/20)
+Now version: **v7.7.2** (21/6/20)
 
 ## License
 

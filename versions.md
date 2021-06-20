@@ -160,3 +160,6 @@ Add the function of color, It look better when you look at the print 🥳
 
 ### v7.7.1 (Important upgrade)
 Edit the PrintValue function of bugs
+
+### v7.7.2
+Edit the help page of Version place, It is changed the `pyfiglet` of `ogre` font. May It be change!
