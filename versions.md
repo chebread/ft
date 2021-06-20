@@ -162,4 +162,7 @@ Add the function of color, It look better when you look at the print 🥳
 Edit the PrintValue function of bugs
 
 ### v7.7.2
-Edit the help page of Version place, It is changed the `pyfiglet` of `ogre` font. May It be change!
+Edit the help page of Version place, It is changed the `pyfiglet` of `ogre` font. May It be change !
+
+### v7.7.3
+Edit interface of print `ft -h`. Become v7.7.1 of print `ft -h`

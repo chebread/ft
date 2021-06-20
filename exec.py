@@ -3,7 +3,7 @@ import os.path
 import sys
 import os
 from clint.textui import *
-from pyfiglet import Figlet
+#from pyfiglet import Figlet
 
 # 전역 변수
 x, y, p, q = 0, 0, 0, []
@@ -120,7 +120,7 @@ def ManVer():
     file = open(ver_file, "rb")
     load = file.read()
     file.close()
-    print(Figlet(font='ogre').renderText(load.decode(encoding="utf-8"))) # Prints
+    print(colored.green(load.decode(encoding="utf-8")[:2]) + ' ' + load.decode(encoding="utf-8")[3:]) # Prints
 def ManIndexErrorHelp(flag):
     print("error: No '%s' flags"%flag)
     now = NowDir()
