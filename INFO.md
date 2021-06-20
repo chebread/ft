@@ -5,5 +5,8 @@ The find function of `ft` use the KMP algorithm
 This blank repository
 
 ### Release
-This release of `ft`
+This release of `ft`.
+
+### Actions
+This tests of `ft`.
 
