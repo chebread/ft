@@ -176,3 +176,6 @@ Edit the Print function of bugs
 ### v7.7.6
 1. Edit bugs of `ft`.
 2. Add the fucntion of blank file read to print
+
+### v.7.7.7
+Edit the bug of `ft`.

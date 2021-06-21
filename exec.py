@@ -31,6 +31,8 @@ def Table(text):
 def Find(target, text):
     c = 0 # count
     m = 0
+    if text == '':
+        text = ' '
     table = Table(text)
     for i in range(len(target)):
         while m > 0 and target[i] != text[m]:
