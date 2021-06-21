@@ -166,3 +166,6 @@ Edit the help page of Version place, It is changed the `pyfiglet` of `ogre` font
 
 ### v7.7.3
 Edit interface of print `ft -h`. Become v7.7.1 of print `ft -h`
+
+### v7.7.4
+Clean code of `ft`

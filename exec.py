@@ -3,10 +3,9 @@ import os.path
 import sys
 import os
 from clint.textui import *
-
 # 전역 변수
-x, y, p = 0, 0, 0
-exts, q = [], []
+exts = [] # 반복되니 전역 변수에 값을 저장해요
+x = 0 # 반복횟수를 저장해요
 
 def Isfile(file):
     if os.path.isfile(file):
@@ -57,7 +56,7 @@ def FindFile(path, text):
     else:
         return -1
 def FindDir(path, text):
-    global x
+    global x, exts
     try:
         if Isdir(path) == -1:
             return 0 # No directory
@@ -151,7 +150,8 @@ def Opptions():
     if (path.find("!")==0 or path.find("*")==0):
         path = os.getcwd()
 def Print(text, path):
-    global dir, y, p, q
+    #global dir
+    file_list = []
     try:
         for i in range(1, 3):
             if i == 1:
@@ -166,15 +166,13 @@ def Print(text, path):
                 if file == 0:
                     return print(0)
                 else: # file of 1 or -1
-                    q.append(file)
+                    file_list.append(file)
                 for i in range(1, 3):
-                    if q[i-1] == 1:
+                    if file_list[i-1] == 1:
                         print(1)
                         sys.exit(0)
                 print(-1)
-                    #print("q: %s"%q)
             else: # 1
-                #y = 1
                 if i == 2:
                     dir = dir.split() # Str -> List
                     set_ = set(dir) # 순서가 바뀌어요
@@ -182,7 +180,6 @@ def Print(text, path):
                     dir.sort()
                     leng = len(dir)
                     for i in range(1, leng+1):
-                        #print("".join(dir[i-1]).replace(path+'/', ""))
                         if Find("".join(dir[i-1]).replace(path+'/', ""), '/')!=0:
                             print(colored.blue("".join(dir[i-1]).replace(path+'/', "").split('/')[0]) + '/' + colored.green("".join(dir[i-1]).replace(path+'/', "").split('/')[1]))
                         else:
@@ -192,38 +189,6 @@ def Print(text, path):
         pass
     except AttributeError:
         pass
-#def PrintValue():
-#    global dir, path
-#    try:
-#        if y == 1:
-#            #print(3)
-#            dir = dir.split() # Str -> List
-#            set_ = set(dir) # 순서가 바뀌어요
-#            dir = list(set_)
-#            dir.sort()
-#            leng = len(dir)
-#            for i in range(1, leng+1):
-#                #print("".join(dir[i-1]).replace(path+'/', ""))
-#                if Find("".join(dir[i-1]).replace(path+'/', ""), '/')!=0:
-#                    print(colored.blue("".join(dir[i-1]).replace(path+'/', "").split('/')[0]) + '/' + colored.green("".join(dir[i-1]).replace(path+'/', "").split('/')[1]))
-#                else:
-#                    print(colored.yellow("".join(dir[i-1]).replace(path+'/', "")))
-#            print(i)
-#            # 1 말고 파일 개수를 출력해줘요
-#        #if y == 2:
-#        #    print(0)
-#        #if y == 3:
-#        #    print(-1)
-#        #if y == 4:
-#        #    for i in range(1, 3):
-#        #        if q[i-1] == 1:
-#        #            print(1)
-#        #            sys.exit(0)
-#        #    print(-1)
-#    except AttributeError:
-#        pass
-#    except IndexError:
-#        pass
 try:
     text, path = ' ', ' ' # NameError 방지해요
     text = TextInput()
@@ -234,14 +199,11 @@ try:
         sys.exit(1)
     # Opptions
     Opptions()
-    # Find
+    # Print Find
     Print(text, path)
-    # Print value
-    #PrintValue()
 except IndexError: # sys.argv의 인자가 충분히 제공 되지 않았을때
     if (text.find("-")==0):
         ManIndexErrorHelp(text)
     else:
         path = os.getcwd()
         Print(text, path)
-        #PrintValue()
