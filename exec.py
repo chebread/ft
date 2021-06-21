@@ -31,8 +31,6 @@ def Table(text):
 def Find(target, text):
     c = 0 # count
     m = 0
-    if text == '':
-        text = ' '
     table = Table(text)
     for i in range(len(target)):
         while m > 0 and target[i] != text[m]:
@@ -51,6 +49,8 @@ def FindFile(path, text):
     load = file.read() # Bytes load
     file.close()
     read = load.decode(encoding="utf-8") # Bytes -> Str
+    if read.find(' ')!=0:
+        read += ' '
     if Find(read, text) != 0:
         return 1
     else:
@@ -61,12 +61,17 @@ def FindDir(path, text):
         if Isdir(path) == -1:
             return 0 # No directory
         dir_list = os.listdir(path)
+        # Don't read files of list
         if '.git' in dir_list:
             dir_list.remove('.git')
         if '.github' in dir_list:
             dir_list.remove('.github')
         if '.DS_Store' in dir_list:
             dir_list.remove('.DS_Store')
+        if '.localized' in dir_list:
+            dir_list.remove('.localized')
+        if '.vscode' in dir_list:
+            dir_list.remove('.vscode')
         leng = len(dir_list) # value
         for i in range(1, leng+1):
             name = "".join(dir_list[i-1])
@@ -180,6 +185,7 @@ def Print(text, path):
                     dir.sort()
                     leng = len(dir)
                     for i in range(1, leng+1):
+                        #print("".join(dir[i-1]).replace(path+'/', ""))
                         if Find("".join(dir[i-1]).replace(path+'/', ""), '/')!=0:
                             list_leng = len("".join(dir[i-1]).replace(path+'/', "").split('/'))
                             #print("list_len: %s"%list_leng)
