@@ -3,11 +3,10 @@ import os.path
 import sys
 import os
 from clint.textui import *
-#from pyfiglet import Figlet
 
 # 전역 변수
-x, y, p, q = 0, 0, 0, []
-exts = []
+x, y, p = 0, 0, 0
+exts, q = [], []
 
 def Isfile(file):
     if os.path.isfile(file):
@@ -153,60 +152,78 @@ def Opptions():
         path = os.getcwd()
 def Print(text, path):
     global dir, y, p, q
-    for i in range(1, 3):
-        if i == 1:
-            text = TextLower(text)
-        else:
-            text = TextUpper(text)
-        dir = FindDir(path, text)
-        if dir == -1: # -1 of dir
-            y = 3
-        elif dir == 0: # 0 of dir or file: 1 or -1
-            file = FindFile(path, text)
-            if file == 0:
-                y = 2
-                #f = 0 + file
-            else: # file of 1 or -1
-                y = 4
-                #print("file: %s"%file)
-                q.append(file)
-                #print("q: %s"%q)
-        else: # 1
-            y = 1
-def PrintValue():
-    global dir, path
     try:
-        if y == 1:
-            dir = dir.split() # Str -> List
-            set_ = set(dir) # 순서가 바뀌어요
-            dir = list(set_)
-            dir.sort()
-            leng = len(dir)
-            for i in range(1, leng+1):
-                #print("".join(dir[i-1]).replace(path+'/', ""))
-                if Find("".join(dir[i-1]).replace(path+'/', ""), '/')!=0:
-                    print(colored.blue("".join(dir[i-1]).replace(path+'/', "").split('/')[0]) + '/' + colored.green("".join(dir[i-1]).replace(path+'/', "").split('/')[1]))
-                else:
-                    print(colored.yellow("".join(dir[i-1]).replace(path+'/', "")))
-                #if Find("".join(dir[i-1]).replace(path+'/', ""), '/')==1:
-                #    print(colored.blue("".join(dir[i-1]).replace(path+'/', "")))
-                #else:
-                #    print(colored.green("".join(dir[i-1]).replace(path+'/', "")))
-            #print(colored.red(i))
-            print(i)
-            # 1 말고 파일 개수를 출력해줘요
-        if y == 2:
-            print(0)
-        if y == 3:
-            print(-1)
-        if y == 4:
-            for i in range(1, 3):
-                if q[i-1] == 1:
-                    print(1)
-                    sys.exit(0)
-            print(-1)
+        for i in range(1, 3):
+            if i == 1:
+                text = TextLower(text)
+            else:
+                text = TextUpper(text)
+            dir = FindDir(path, text)
+            if dir == -1: # -1 of dir
+                return print(-1)
+            elif dir == 0: # 0 of dir or file: 1 or -1
+                file = FindFile(path, text)
+                if file == 0:
+                    return print(0)
+                else: # file of 1 or -1
+                    q.append(file)
+                for i in range(1, 3):
+                    if q[i-1] == 1:
+                        print(1)
+                        sys.exit(0)
+                print(-1)
+                    #print("q: %s"%q)
+            else: # 1
+                #y = 1
+                if i == 2:
+                    dir = dir.split() # Str -> List
+                    set_ = set(dir) # 순서가 바뀌어요
+                    dir = list(set_)
+                    dir.sort()
+                    leng = len(dir)
+                    for i in range(1, leng+1):
+                        #print("".join(dir[i-1]).replace(path+'/', ""))
+                        if Find("".join(dir[i-1]).replace(path+'/', ""), '/')!=0:
+                            print(colored.blue("".join(dir[i-1]).replace(path+'/', "").split('/')[0]) + '/' + colored.green("".join(dir[i-1]).replace(path+'/', "").split('/')[1]))
+                        else:
+                            print(colored.yellow("".join(dir[i-1]).replace(path+'/', "")))
+                    print(i)
+    except IndexError:
+        pass
     except AttributeError:
         pass
+#def PrintValue():
+#    global dir, path
+#    try:
+#        if y == 1:
+#            #print(3)
+#            dir = dir.split() # Str -> List
+#            set_ = set(dir) # 순서가 바뀌어요
+#            dir = list(set_)
+#            dir.sort()
+#            leng = len(dir)
+#            for i in range(1, leng+1):
+#                #print("".join(dir[i-1]).replace(path+'/', ""))
+#                if Find("".join(dir[i-1]).replace(path+'/', ""), '/')!=0:
+#                    print(colored.blue("".join(dir[i-1]).replace(path+'/', "").split('/')[0]) + '/' + colored.green("".join(dir[i-1]).replace(path+'/', "").split('/')[1]))
+#                else:
+#                    print(colored.yellow("".join(dir[i-1]).replace(path+'/', "")))
+#            print(i)
+#            # 1 말고 파일 개수를 출력해줘요
+#        #if y == 2:
+#        #    print(0)
+#        #if y == 3:
+#        #    print(-1)
+#        #if y == 4:
+#        #    for i in range(1, 3):
+#        #        if q[i-1] == 1:
+#        #            print(1)
+#        #            sys.exit(0)
+#        #    print(-1)
+#    except AttributeError:
+#        pass
+#    except IndexError:
+#        pass
 try:
     text, path = ' ', ' ' # NameError 방지해요
     text = TextInput()
@@ -220,11 +237,11 @@ try:
     # Find
     Print(text, path)
     # Print value
-    PrintValue()
+    #PrintValue()
 except IndexError: # sys.argv의 인자가 충분히 제공 되지 않았을때
     if (text.find("-")==0):
         ManIndexErrorHelp(text)
     else:
         path = os.getcwd()
         Print(text, path)
-        PrintValue()
+        #PrintValue()
