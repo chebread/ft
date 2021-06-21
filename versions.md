@@ -169,3 +169,6 @@ Edit interface of print `ft -h`. Become v7.7.1 of print `ft -h`
 
 ### v7.7.4
 Clean code of `ft`
+
+### v7.7.5
+Edit the Print function of bugs

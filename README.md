@@ -91,11 +91,11 @@ It **find** for a string in **all files** in the directory you currently belong 
 
 ### I will want to upload to Homebrew package 👻
 
-But It isn't enough level of completion 🥲
+But It isn't **enough** level of completion 🥲
 
 ## Version
 
-Now version: **v7.7.4** (21/6/21)
+Now version: **v7.7.5** (21/6/21)
 
 ## License
 

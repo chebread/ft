@@ -181,7 +181,12 @@ def Print(text, path):
                     leng = len(dir)
                     for i in range(1, leng+1):
                         if Find("".join(dir[i-1]).replace(path+'/', ""), '/')!=0:
-                            print(colored.blue("".join(dir[i-1]).replace(path+'/', "").split('/')[0]) + '/' + colored.green("".join(dir[i-1]).replace(path+'/', "").split('/')[1]))
+                            list_leng = len("".join(dir[i-1]).replace(path+'/', "").split('/'))
+                            #print("list_len: %s"%list_leng)
+                            for j in range(0, list_leng):
+                                if j <= list_leng-2:
+                                    print(colored.blue("".join(dir[i-1]).replace(path+'/', "").split('/')[j]), end="/")
+                            print(colored.green("".join(dir[i-1]).replace(path+'/', "").split('/')[j]))
                         else:
                             print(colored.yellow("".join(dir[i-1]).replace(path+'/', "")))
                     print(i)
