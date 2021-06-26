@@ -5,7 +5,7 @@
 
 ### Installation
 
-1. **Enter** `git clone https://github.com/developerHaneum/ft.git` at Terminal
+1. **Enter** `git clone https://github.com/developerHaneum/ft.git` or `pip3 install ftext` at Terminal
 
 2. **Add** `.zshrc` to `alias ft="usr/bin/python3 (Cloned directory path)/exec.py"`
 
