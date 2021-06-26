@@ -3,6 +3,7 @@ import os.path
 import sys
 import os
 from clint.textui import *
+
 # 전역 변수
 exts = [] # 반복되니 전역 변수에 값을 저장해요
 x = 0 # 반복횟수를 저장해요
@@ -114,7 +115,8 @@ def ManHelp():
     file = open(help_file, "rb")
     load = file.read()
     file.close()
-    print(load.decode(encoding="utf-8")) # Prints
+    load = load.decode(encoding="utf-8")
+    print(load) # Prints
 def ManVer():
     now = NowDir()
     ver_file = now + "/doc/version.md"

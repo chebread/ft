@@ -173,7 +173,7 @@ Clean code of `ft`
 ### v7.7.5
 Edit the Print function of bugs
 
-### v7.7.6
+### v7.7.6 (Important upgrade)
 1. Edit bugs of `ft`.
 2. Add the fucntion of blank file read to print
 
