@@ -7,11 +7,11 @@
 
 1. **Enter** `git clone https://github.com/developerHaneum/ft.git` or `pip3 install ftext` at Terminal
 
-2. **Add** `.zshrc` to `alias ft="usr/bin/python3 (Cloned directory path)/exec.py"`
+2. **Add** `.zshrc` to `alias ft="usr/bin/python3 (Cloned or Downloaded directory path)/exec.py"`
 
 ### How to use `man ft`
 
-**Enter** `cp (Clone directory path of 'ft')/doc/ft.1 /usr/local/share/man/man1/ft.1` at Terminal
+**Enter** `cp (Cloned or Downloaded directory path of 'ft')/doc/ft.1 /usr/local/share/man/man1/ft.1` at Terminal
 
 ## Basics to use
 
