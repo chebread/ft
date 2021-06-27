@@ -9,4 +9,3 @@ This release of `ft`.
 
 ### Actions
 This tests of `ft`.
-

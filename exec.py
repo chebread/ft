@@ -1,12 +1,15 @@
 # Finding Text at file and directory
+from clint.textui import *
 import os.path
 import sys
 import os
-from clint.textui import *
-# 전역 변수
+import time
+# Time look
+#start = time.time()
+# Global variable
 exts = [] # 반복되니 전역 변수에 값을 저장해요
 x = 0 # 반복횟수를 저장해요
-
+# Functions
 def Isfile(file):
     if os.path.isfile(file):
         return 1
@@ -32,7 +35,7 @@ def Find(target, text):
     c = 0 # count
     m = 0
     if text == '':
-        text = ' '
+        text = ' ' # Non의 값은 _(스페이스바 1개)로 값을 바꾸어요
     table = Table(text)
     for i in range(len(target)):
         while m > 0 and target[i] != text[m]:
@@ -40,7 +43,7 @@ def Find(target, text):
         if target[i] == text[m]:
             m += 1
             if m == len(text):
-                c += 1 # conut += 1
+                c = 1 # conut = 1
                 m = table[m-1]
     return c
 def FindFile(path, text):
@@ -74,6 +77,8 @@ def FindDir(path, text):
             dir_list.remove('.localized')
         if '.vscode' in dir_list:
             dir_list.remove('.vscode')
+        if '.gitignore' in dir_list:
+            dir_list.remove('.gitignore')
         leng = len(dir_list) # value
         for i in range(1, leng+1):
             name = "".join(dir_list[i-1])
@@ -220,3 +225,5 @@ except IndexError: # sys.argv의 인자가 충분히 제공 되지 않았을때
     else:
         path = os.getcwd()
         Print(text, path)
+        # Time Look
+        #print("ExecTime: ", time.time() - start)

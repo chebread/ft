@@ -177,5 +177,8 @@ Edit the Print function of bugs
 1. Edit bugs of `ft`.
 2. Add the fucntion of blank file read to print
 
-### v.7.7.7
+### v7.7.7
 Edit the bug of `ft`.
+
+### v7.7.8
+Edit code, Clean code of `ft`
