@@ -7,12 +7,12 @@
 
 2. **Add** `.zshrc` to `alias ft="usr/bin/python3 (Cloned or Downloaded directory path)/exec.py"`
 
-### How to use `man ft`
+### How to use `man ft` 📚
 **Enter** `cp (Cloned or Downloaded directory path of 'ft')/doc/ft.1 /usr/local/share/man/man1/ft.1` at Terminal
 
 ## Basics to use
 
-### USAGE
+### USAGE 🏠
 
 #### `ft [FLAGS/<text>] [OPPTIONS/<path>]`
 This basics form is **find** a string in a file and a string in among the files in the directory. 🤩
@@ -70,13 +70,16 @@ It mean is a **number**
 ### How to use of `ft '' !` or `ft (blank) (blank)`
 It **find** for a string in **all files** in the directory you currently belong to 🥳
 
+### What a `(Cloned or Downloaded directory path)/ci/help.bash` file ?
+This is the help page for `ft` runing in the shell. Enter `sh (Cloned or Downloaded directory path)/ci/help.bash` for this help page 🙂
+
 ## Goal
 
 ### I will want to upload to Homebrew package 👻
 But It isn't **enough** level of completion 🥲
 
 ## Version
-Now version: **v7.7.8** (21/6/27) 🎇
+✋Now version: **v7.7.8** (21/6/27) 🎇
 
 ## License
 Use **MIT License** so everyone can use it 😉

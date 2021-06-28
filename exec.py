@@ -47,8 +47,7 @@ def Find(target, text):
                 m = table[m-1]
     return c
 def FindFile(path, text):
-    isfile = Isfile(path)
-    if isfile == -1:
+    if Isfile(path) == -1:
         return 0
     file = open(path, "rb")
     load = file.read() # Bytes load
