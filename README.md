@@ -70,9 +70,6 @@ It mean is a **number**
 ### How to use of `ft '' !` or `ft (blank) (blank)`
 It **find** for a string in **all files** in the directory you currently belong to 🥳
 
-### What a `(Cloned or Downloaded directory path)/ci/help.bash` file ?
-This is the help page for `ft` runing in the shell. Enter `sh (Cloned or Downloaded directory path)/ci/help.bash` for this help page 🙂
-
 ## Goal
 
 ### I will want to upload to Homebrew package 👻
