@@ -3,7 +3,7 @@ from clint.textui import *
 import os.path
 import sys
 import os
-import time
+#import time
 # Time look
 #start = time.time()
 # Global variable
@@ -78,6 +78,8 @@ def FindDir(path, text):
             dir_list.remove('.vscode')
         if '.gitignore' in dir_list:
             dir_list.remove('.gitignore')
+        #if '.jekyll-cache' in dir_list:
+        #    dir_list.os.remove('.jekyll-cache')
         leng = len(dir_list) # value
         for i in range(1, leng+1):
             name = "".join(dir_list[i-1])
@@ -225,4 +227,4 @@ except IndexError: # sys.argv의 인자가 충분히 제공 되지 않았을때
         path = os.getcwd()
         Print(text, path)
         # Time Look
-        #print("ExecTime: ", time.time() - start)
+        # print("ExecTime: ", time.time() - start)
