@@ -182,3 +182,6 @@ Edit the bug of `ft`.
 
 ### v7.7.8
 Edit code, Clean code of `ft`
+
+### v7.8.0 (Important upgrade)
+Add the FindDir function to not read the `.png` file! 🙂

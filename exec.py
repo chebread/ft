@@ -3,7 +3,7 @@ from clint.textui import *
 import os.path
 import sys
 import os
-#import time
+import time
 # Time look
 #start = time.time()
 # Global variable
@@ -78,8 +78,9 @@ def FindDir(path, text):
             dir_list.remove('.vscode')
         if '.gitignore' in dir_list:
             dir_list.remove('.gitignore')
-        #if '.jekyll-cache' in dir_list:
-        #    dir_list.os.remove('.jekyll-cache')
+        for i in dir_list:
+            if Find(i, '.png'):
+                dir_list.remove(i)
         leng = len(dir_list) # value
         for i in range(1, leng+1):
             name = "".join(dir_list[i-1])
@@ -166,15 +167,19 @@ def Print(text, path):
     #global dir
     file_list = []
     try:
+        #print("test1")
         for i in range(1, 3):
             if i == 1:
                 text = TextLower(text)
             else:
                 text = TextUpper(text)
             dir = FindDir(path, text)
+            #print("test2")
             if dir == -1: # -1 of dir
+                #print("test3")
                 return print(-1)
             elif dir == 0: # 0 of dir or file: 1 or -1
+                #print("test3")
                 file = FindFile(path, text)
                 if file == 0:
                     return print(0)
@@ -186,7 +191,9 @@ def Print(text, path):
                         sys.exit(0)
                 print(-1)
             else: # 1
+                #print("test4")
                 if i == 2:
+                    #print("test5")
                     dir = dir.split() # Str -> List
                     set_ = set(dir) # 순서가 바뀌어요
                     dir = list(set_)
@@ -206,8 +213,8 @@ def Print(text, path):
                     print(i)
     except IndexError:
         pass
-    except AttributeError:
-        pass
+    #except AttributeError:
+    #    pass
 try:
     text, path = ' ', ' ' # NameError 방지해요
     text = TextInput()
@@ -220,11 +227,13 @@ try:
     Opptions()
     # Print Find
     Print(text, path)
+    # Time Look
+    #print("ExecTime: ", time.time() - start)
 except IndexError: # sys.argv의 인자가 충분히 제공 되지 않았을때
     if (text.find("-")==0):
         ManIndexErrorHelp(text)
     else:
         path = os.getcwd()
         Print(text, path)
-        # Time Look
-        # print("ExecTime: ", time.time() - start)
+        #Time Look
+        #print("ExecTime: ", time.time() - start)
