@@ -80,6 +80,7 @@ def FindDir(path, text):
             dir_list.remove('.gitignore')
         for i in dir_list:
             if Find(i, '.png'):
+                #print("v7.8.0")
                 dir_list.remove(i)
         leng = len(dir_list) # value
         for i in range(1, leng+1):
@@ -213,8 +214,8 @@ def Print(text, path):
                     print(i)
     except IndexError:
         pass
-    #except AttributeError:
-    #    pass
+    except AttributeError:
+        pass
 try:
     text, path = ' ', ' ' # NameError 방지해요
     text = TextInput()
