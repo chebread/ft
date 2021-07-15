@@ -191,3 +191,6 @@ Edit bug of `v7.8.0`, Fix the export sentense in function of `Print`
 
 ### v7.8.2
 Clean code of `ft`
+
+### v7.8.3
+Edit sentense of `ft.1` man file
