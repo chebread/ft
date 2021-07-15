@@ -188,3 +188,6 @@ Add the FindDir function to not read the `.png` file! 🙂
 
 ### v7.8.1 (Important upgrade)
 Edit bug of `v7.8.0`, Fix the export sentense in function of `Print`
+
+### v7.8.2
+Clean code of `ft`

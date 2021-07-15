@@ -7,8 +7,8 @@ import time
 # Time look
 #start = time.time()
 # Global variable
-exts = [] # 반복되니 전역 변수에 값을 저장해요
-x = 0 # 반복횟수를 저장해요
+exts = [] # 찾은 결과 값을 저장해요
+count = 0 # 반복횟수를 저장해요
 # Functions
 def Isfile(file):
     if os.path.isfile(file):
@@ -60,7 +60,7 @@ def FindFile(path, text):
     else:
         return -1
 def FindDir(path, text):
-    global x, exts
+    global count, exts
     try:
         if Isdir(path) == -1:
             return 0 # No directory
@@ -89,17 +89,17 @@ def FindDir(path, text):
             if name.find(".") != -1: # file
                 find = FindFile(file, text)
                 if find != -1:
-                    x = 0 + 1
+                    count = 0 + 1
                     ext = "%s\n"%file # \n을 추가해서 "".join(exts)해도 줄 바꿈이 괜찮은거에요
                     exts.append(ext)
             else: # dir
                 dir = FindDir(file, text)
-        if x == 0:
+        if count == 0:
             return -1 # 파일에 찾는 문자열이 없다면
         return "".join(exts) # No return of value (1: extant)
     except UnicodeDecodeError: # 만약 못읽는 파일이 나오면 못읽는 파일은 읽지 않아요
         pass
-    except PermissionError:
+    except PermissionError: # 파일의 권한이 맞지 않을 경우, 읽지 않아요
         return sys.exit(1)
 def TextInput():
     return sys.argv[1]
