@@ -10,5 +10,5 @@ This release of `ft`.
 ### Actions
 This tests of `ft`.
 
-### Build, ft...egg, dist
-This directories is `pypi` package directories
+### exec.py
+Execute file of `ft`
