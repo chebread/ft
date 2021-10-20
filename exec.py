@@ -3,7 +3,7 @@ from clint.textui import *
 import os.path
 import sys
 import os
-import time
+# import time
 # Time look
 #start = time.time()
 # Global variable
@@ -146,8 +146,7 @@ def ManIndexErrorHelp(flag):
     load = file.read()
     file.close()
     print(load.decode(encoding="utf-8")) # Print
-def Flags():
-    global text
+def Flags(text):
     cp_text = text # 복사본으로 이용해요
     for i in range(1, 3):
         if i == 1:
@@ -216,11 +215,12 @@ def Print(text, path):
         pass
     except AttributeError:
         pass
+
 try:
     text, path = ' ', ' ' # NameError 방지해요
     text = TextInput()
     # Flags
-    Flags()
+    Flags(text)
     path = PathInput()
     if len(sys.argv) > 3: # 다중 인자 입력 방지
         sys.exit(1)

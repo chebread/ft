@@ -194,3 +194,6 @@ Clean code of `ft`
 
 ### v7.8.3
 Edit sentense of `ft.1` man file
+
+### v7.8.4
+Edit Flags function, because yet Argv is global variable, but now argv is argv variable
