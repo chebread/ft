@@ -146,7 +146,8 @@ def ManIndexErrorHelp(flag):
     load = file.read()
     file.close()
     print(load.decode(encoding="utf-8")) # Print
-def Flags(text):
+def Flags():
+    global text
     cp_text = text # 복사본으로 이용해요
     for i in range(1, 3):
         if i == 1:
@@ -220,7 +221,7 @@ try:
     text, path = ' ', ' ' # NameError 방지해요
     text = TextInput()
     # Flags
-    Flags(text)
+    Flags()
     path = PathInput()
     if len(sys.argv) > 3: # 다중 인자 입력 방지
         sys.exit(1)
