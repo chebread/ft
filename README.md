@@ -76,7 +76,7 @@ It **find** for a string in **all files** in the directory you currently belong 
 But It isn't **enough** level of completion 🥲
 
 ## Version
-✋Now version: **v7.8.4** (21/10/20) 🎇
+✋Now version: **v7.8.5** (21/10/21) 🎇
 
 ## License
 Use **MIT License** so everyone can use it 😉

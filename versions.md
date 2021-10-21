@@ -197,3 +197,6 @@ Edit sentense of `ft.1` man file
 
 ### v7.8.4
 Edit Flags function, because yet Argv is global variable, but now argv is argv variable
+
+### v7.8.5
+Edit v7.8.4 bugs, v7.8.4에서 고친 버그들이 더욱더 잘못되게 다시 고쳤습니다.
