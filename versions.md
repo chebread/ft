@@ -200,3 +200,6 @@ Edit Flags function, because yet Argv is global variable, but now argv is argv v
 
 ### v7.8.5
 Edit v7.8.4 bugs, v7.8.4에서 고친 버그들이 더욱더 잘못되게 다시 고쳤습니다.
+
+### v7.9.0
+.png, .mov, .jpg, env, ... 등 문자열 검색이 불가능 한 파일들이나 보안이 요구되는 파일을 읽지 않도록 수정햐였습니다.
