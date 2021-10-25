@@ -1,1 +1,6 @@
-tests/
+# testing
+/tests
+test.md
+
+# misc
+.DS_Store
