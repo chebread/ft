@@ -91,6 +91,8 @@ def FindDir(path, text):
                 dir_list.remove(i)
             if Find(i, '.jpg') == 1:
                 dir_list.remove(i)
+            if Find(i, '.swp') == 1:
+                dir_list.remove(i)
             else:
                 pass
         leng = len(dir_list) # value
