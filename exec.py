@@ -3,9 +3,9 @@ from clint.textui import *
 import os.path
 import sys
 import os
-# import time
+import time
 # Time look
-# start = time.time()
+start = time.time()
 # Global variable
 exts = [] # 찾은 결과 값을 저장해요
 count = 0 # 반복횟수를 저장해요
@@ -65,7 +65,9 @@ def FindDir(path, text):
     try:
         if Isdir(path) == -1:
             return 0 # No directory
+        read_files = ['.py', '.md', '.txt']
         dir_list = os.listdir(path)
+        # dir_list = [_ for _ in os.listdir(path) for reads in read_files if _.endswith(reads)]
         # Don't read files of list
         if '.git' in dir_list:
             dir_list.remove('.git')
@@ -244,7 +246,7 @@ try:
     # Print Find
     Print(text, path)
     # Time Look
-    # print("ExecTime: ", time.time() - start)
+    print("ExecTime: ", time.time() - start)
 except IndexError: # sys.argv의 인자가 충분히 제공 되지 않았을때
     if (text.find("-")==0):
         ManIndexErrorHelp(text)
@@ -252,4 +254,4 @@ except IndexError: # sys.argv의 인자가 충분히 제공 되지 않았을때
         path = os.getcwd()
         Print(text, path)
         #Time Look
-        # print("ExecTime: ", time.time() - start)
+        print("ExecTime: ", time.time() - start)
