@@ -80,7 +80,7 @@ It **find** for a string in **all files** in the directory you currently belong 
 But It isn't **enough** level of completion 🥲
 
 ## Version
-✋Now version: **v8.0.0** (21/10/26) 🎇
+✋Now version: **v8.0.0** (21/11/8) 🎇
 
 ## License
 Use **MIT License** so everyone can use it 😉
