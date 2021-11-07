@@ -65,38 +65,45 @@ def FindDir(path, text):
     try:
         if Isdir(path) == -1:
             return 0 # No directory
-        readable_exts = ['.py', '.md', '.txt']
+        readable_exts = ['.py', '.md', '.txt' ,'LICENSE'] # 읽어야 되는 파일
+
         dir_list = os.listdir(path)
+        # 읽지 못하는 디렉토리들
+        if '.git' in dir_list:
+            dir_list.remove('.git')
+        if '.github' in dir_list:
+            dir_list.remove('.github')
+        if '.DS_Store' in dir_list:
+            dir_list.remove('.DS_Store')
+        if '.localized' in dir_list:
+            dir_list.remove('.localized')
+        if '.vscode' in dir_list:
+            dir_list.remove('.vscode')
+        if '.gitignore' in dir_list:
+            dir_list.remove('.gitignore')
+        if 'node_modules' in dir_list:
+            dir_list.remove('node_modules')
+        if '.env' in dir_list:
+            dir_list.remove('.env')
+        if 'build' in dir_list:
+            dir_list.remove('build')
+
         readable_dir_list = []
         for i in dir_list:
             #print(colored.blue(i))
-            for j in readable_exts:
-                #print(colored.red(j))
-                if Find(i, j):
-                    readable_dir_list.append(i)
-        print(colored.blue(dir_list))
-        print(colored.red(readable_dir_list))
-        dir_list = readable_dir_list # dir_list를 ft가 읽을 수 있는 파일들을 담은 리스트로 초기화(원래 요소를 없에고 새로운 요소를 추가)해요.
+            if Isfile(path + '/' + i) == 1: # Isfile로 파일인지 아닌지를 확인해요
+                #print(colored.cyan(i))
+                for j in readable_exts:
+                    #print(colored.blue(j))
+                    if Find(i, j) != 0:
+                        #print(i)
+                        readable_dir_list.append(i) # dir_list에서 읽을 수 있는 파일들을 readable_dir_list에 리스트에 저장해요
+            else: # dir
+                print(i)
+                readable_dir_list.append(i)
+        dir_list = readable_dir_list # dir_list를 읽을 수 있는 파일들의 리스트로 초기화 해주어요
         # dir_list = [_ for _ in os.listdir(path) for reads in read_files if _.endswith(reads)]
         # Don't read files of list
-        #if '.git' in dir_list:
-        #    dir_list.remove('.git')
-        #if '.github' in dir_list:
-        #    dir_list.remove('.github')
-        #if '.DS_Store' in dir_list:
-        #    dir_list.remove('.DS_Store')
-        #if '.localized' in dir_list:
-        #    dir_list.remove('.localized')
-        #if '.vscode' in dir_list:
-        #    dir_list.remove('.vscode')
-        #if '.gitignore' in dir_list:
-        #    dir_list.remove('.gitignore')
-        #if 'node_modules' in dir_list:
-        #    dir_list.remove('node_modules')
-        #if '.env' in dir_list:
-        #    dir_list.remove('env')
-        #if 'build' in dir_list:
-        #    dir_list.remove('build')
         #for i in dir_list:
         #    if Find(i, '.png') == 1:
         #        dir_list.remove(i)
@@ -112,7 +119,7 @@ def FindDir(path, text):
         for i in range(1, leng+1):
             name = "".join(dir_list[i-1])
             file = path + '/' + dir_list[i-1]
-            if name.find(".") != -1: # file
+            if Isfile(file) == 1: # Isfile로 파일인지 아닌지를 확인해요
                 find = FindFile(file, text)
                 if find != -1:
                     count = 0 + 1
