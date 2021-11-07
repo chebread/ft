@@ -1,4 +1,5 @@
 # Finding Text at file and directory
+from typing import Coroutine
 from clint.textui import *
 import os.path
 import sys
@@ -65,7 +66,7 @@ def FindDir(path, text):
     try:
         if Isdir(path) == -1:
             return 0 # No directory
-        readable_exts = ['.py', '.md', '.txt' ,'LICENSE'] # 읽어야 되는 파일
+        readable_exts = ['.py', '.md', '.txt' ,'LICENSE', '.txt', '.rb', '.1'] # 이 읽어도 되는 파일들의 리스트 변수에 읽어도 되는 파일의 확장자나 이름을 입력하면 되요!
 
         dir_list = os.listdir(path)
         # 읽지 못하는 디렉토리들
@@ -93,28 +94,18 @@ def FindDir(path, text):
             #print(colored.blue(i))
             if Isfile(path + '/' + i) == 1: # Isfile로 파일인지 아닌지를 확인해요
                 #print(colored.cyan(i))
+                if Find(i, '.swp') != 0:
+                    #print(i)
+                    continue # .swp 파일이 나오면 밑부분의 코드를 실행하지 않고 위의 코드로 올라가요
                 for j in readable_exts:
                     #print(colored.blue(j))
                     if Find(i, j) != 0:
                         #print(i)
                         readable_dir_list.append(i) # dir_list에서 읽을 수 있는 파일들을 readable_dir_list에 리스트에 저장해요
             else: # dir
-                print(i)
+                #print(i)
                 readable_dir_list.append(i)
         dir_list = readable_dir_list # dir_list를 읽을 수 있는 파일들의 리스트로 초기화 해주어요
-        # dir_list = [_ for _ in os.listdir(path) for reads in read_files if _.endswith(reads)]
-        # Don't read files of list
-        #for i in dir_list:
-        #    if Find(i, '.png') == 1:
-        #        dir_list.remove(i)
-        #    if Find(i, '.mov') == 1:
-        #        dir_list.remove(i)
-        #    if Find(i, '.jpg') == 1:
-        #        dir_list.remove(i)
-        #    if Find(i, '.swp') == 1:
-        #        dir_list.remove(i)
-        #    else:
-        #        pass
         leng = len(dir_list) # value
         for i in range(1, leng+1):
             name = "".join(dir_list[i-1])
@@ -130,7 +121,7 @@ def FindDir(path, text):
         if count == 0:
             return -1 # 파일에 찾는 문자열이 없다면
         return "".join(exts) # No return of value (1: extant)
-    except UnicodeDecodeError: # 만약 못읽는 파일이 나오면 못읽는 파일은 읽지 않아요
+    except UnicodeDecodeError: # 만약 못읽는 파일이 나오면 못읽는 파일은 읽지 않아요 # Python의 모듈 Pickle로 만든 파일은 고유의 설정때문에 ft는 읽지를 못하고, 이 오류가 발생하게 되요
         pass
     except PermissionError: # 파일의 권한이 맞지 않을 경우, 읽지 않아요
         return sys.exit(1)
