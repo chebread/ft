@@ -6,7 +6,7 @@ import sys
 import os
 import time
 # Time look
-start = time.time()
+#start = time.time()
 # Global variable
 exts = [] # 찾은 결과 값을 저장해요
 count = 0 # 반복횟수를 저장해요
@@ -91,19 +91,13 @@ def FindDir(path, text):
 
         readable_dir_list = []
         for i in dir_list:
-            #print(colored.blue(i))
             if Isfile(path + '/' + i) == 1: # Isfile로 파일인지 아닌지를 확인해요
-                #print(colored.cyan(i))
                 if Find(i, '.swp') != 0:
-                    #print(i)
                     continue # .swp 파일이 나오면 밑부분의 코드를 실행하지 않고 위의 코드로 올라가요
                 for j in readable_exts:
-                    #print(colored.blue(j))
                     if Find(i, j) != 0:
-                        #print(i)
                         readable_dir_list.append(i) # dir_list에서 읽을 수 있는 파일들을 readable_dir_list에 리스트에 저장해요
             else: # dir
-                #print(i)
                 readable_dir_list.append(i)
         dir_list = readable_dir_list # dir_list를 읽을 수 있는 파일들의 리스트로 초기화 해주어요
         leng = len(dir_list) # value
@@ -192,19 +186,15 @@ def Print(text, path):
     #global dir
     file_list = []
     try:
-        #print("test1")
         for i in range(1, 3):
             if i == 1:
                 text = TextLower(text)
             else:
                 text = TextUpper(text)
             dir = FindDir(path, text)
-            #print("test2")
             if dir == -1: # -1 of dir
-                #print("test3")
                 return print(-1)
             elif dir == 0: # 0 of dir or file: 1 or -1
-                #print("test3")
                 file = FindFile(path, text)
                 if file == 0:
                     return print(0)
@@ -216,19 +206,15 @@ def Print(text, path):
                         sys.exit(0)
                 print(-1)
             else: # 1
-                #print("test4")
                 if i == 2:
-                    #print("test5")
                     dir = dir.split() # Str -> List
                     set_ = set(dir) # 순서가 바뀌어요
                     dir = list(set_)
                     dir.sort()
                     leng = len(dir)
                     for i in range(1, leng+1):
-                        #print("".join(dir[i-1]).replace(path+'/', ""))
                         if Find("".join(dir[i-1]).replace(path+'/', ""), '/')!=0:
                             list_leng = len("".join(dir[i-1]).replace(path+'/', "").split('/'))
-                            #print("list_len: %s"%list_leng)
                             for j in range(0, list_leng):
                                 if j <= list_leng-2:
                                     print(colored.blue("".join(dir[i-1]).replace(path+'/', "").split('/')[j]), end="/")
@@ -254,7 +240,7 @@ try:
     # Print Find
     Print(text, path)
     # Time Look
-    print("ExecTime: ", time.time() - start)
+    #print("ExecTime: ", time.time() - start)
 except IndexError: # sys.argv의 인자가 충분히 제공 되지 않았을때
     if (text.find("-")==0):
         ManIndexErrorHelp(text)
@@ -262,4 +248,4 @@ except IndexError: # sys.argv의 인자가 충분히 제공 되지 않았을때
         path = os.getcwd()
         Print(text, path)
         #Time Look
-        print("ExecTime: ", time.time() - start)
+        #print("ExecTime: ", time.time() - start)
