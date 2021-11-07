@@ -69,6 +69,8 @@ It mean is a **number**
 
 ### ~~v7.8.5 이하 버전들은  등의 파일들을 읽기 때문에, 되도록이면 .png, .jpg, .env, node_modules (dir) 등과 같은 파일이나 디렉토리가 있는 곳에서 버그가 고쳐질때 까지 ft 를 사용하지 마세요 😢~~ -> This issue has been **resolved in version v7.9.0** 🥳
 
+### v8.0.0 에서 v7.8.5에 관한 버그를 완벽히 수정하였습니다. 자세한 설명은 versions.md 파일을 읽어보세요! 😃
+
 ### How to use of `ft '' !` or `ft (blank) (blank)`
 It **find** for a string in **all files** in the directory you currently belong to 🥳
 
@@ -78,7 +80,7 @@ It **find** for a string in **all files** in the directory you currently belong 
 But It isn't **enough** level of completion 🥲
 
 ## Version
-✋Now version: **v7.9.1** (21/10/26) 🎇
+✋Now version: **v8.0.0** (21/10/26) 🎇
 
 ## License
 Use **MIT License** so everyone can use it 😉
