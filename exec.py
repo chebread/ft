@@ -6,7 +6,7 @@ import sys
 import os
 import time
 # Time look
-#start = time.time()
+start = time.time()
 # Global variable
 exts = [] # 찾은 결과 값을 저장해요
 count = 0 # 반복횟수를 저장해요
@@ -66,8 +66,6 @@ def FindDir(path, text):
     try:
         if Isdir(path) == -1:
             return 0 # No directory
-        readable_exts = ['.py', '.md', '.txt' ,'LICENSE', '.txt', '.rb', '.1'] # 이 읽어도 되는 파일들의 리스트 변수에 읽어도 되는 파일의 확장자나 이름을 입력하면 되요!
-
         dir_list = os.listdir(path)
         # 읽지 못하는 디렉토리들
         if '.git' in dir_list:
@@ -88,15 +86,16 @@ def FindDir(path, text):
             dir_list.remove('.env')
         if 'build' in dir_list:
             dir_list.remove('build')
-
         readable_dir_list = []
+        readable_file_exts = ['.py', '.md', '.txt' ,'LICENSE', '.txt', '.rb', '.1'] # 이 읽어도 되는 파일들의 리스트 변수에 읽어도 되는 파일의 확장자나 이름을 입력하면 되요!
         for i in dir_list:
             if Isfile(path + '/' + i) == 1: # Isfile로 파일인지 아닌지를 확인해요
                 if Find(i, '.swp') != 0:
                     continue # .swp 파일이 나오면 밑부분의 코드를 실행하지 않고 위의 코드로 올라가요
-                for j in readable_exts:
+                for j in readable_file_exts:
                     if Find(i, j) != 0:
                         readable_dir_list.append(i) # dir_list에서 읽을 수 있는 파일들을 readable_dir_list에 리스트에 저장해요
+                    
             else: # dir
                 readable_dir_list.append(i)
         dir_list = readable_dir_list # dir_list를 읽을 수 있는 파일들의 리스트로 초기화 해주어요
@@ -240,7 +239,7 @@ try:
     # Print Find
     Print(text, path)
     # Time Look
-    #print("ExecTime: ", time.time() - start)
+    print("ExecTime: ", time.time() - start)
 except IndexError: # sys.argv의 인자가 충분히 제공 되지 않았을때
     if (text.find("-")==0):
         ManIndexErrorHelp(text)
@@ -248,4 +247,4 @@ except IndexError: # sys.argv의 인자가 충분히 제공 되지 않았을때
         path = os.getcwd()
         Print(text, path)
         #Time Look
-        #print("ExecTime: ", time.time() - start)
+        print("ExecTime: ", time.time() - start)
