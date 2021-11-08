@@ -95,7 +95,6 @@ def FindDir(path, text):
                 for j in readable_file_exts:
                     if Find(i, j) != 0:
                         readable_dir_list.append(i) # dir_list에서 읽을 수 있는 파일들을 readable_dir_list에 리스트에 저장해요
-                    
             else: # dir
                 readable_dir_list.append(i)
         dir_list = readable_dir_list # dir_list를 읽을 수 있는 파일들의 리스트로 초기화 해주어요
