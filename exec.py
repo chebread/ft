@@ -1,5 +1,4 @@
 # Finding Text at file and directory
-from typing import Coroutine
 from clint.textui import *
 import os.path
 import sys
