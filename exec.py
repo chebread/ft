@@ -86,7 +86,7 @@ def FindDir(path, text):
         if 'build' in dir_list:
             dir_list.remove('build')
         readable_dir_list = []
-        readable_file_exts = ['.py', '.md', '.txt' ,'LICENSE', '.txt', '.rb', '.1'] # 이 읽어도 되는 파일들의 리스트 변수에 읽어도 되는 파일의 확장자나 이름을 입력하면 되요!
+        readable_file_exts = ['.py', '.md', '.txt' ,'LICENSE', '.txt', '.rb', '.1', '.html'] # 이 읽어도 되는 파일들의 리스트 변수에 읽어도 되는 파일의 확장자나 이름을 입력하면 되요!
         for i in dir_list:
             if Isfile(path + '/' + i) == 1: # Isfile로 파일인지 아닌지를 확인해요
                 if Find(i, '.swp') != 0:

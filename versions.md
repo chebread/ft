@@ -211,3 +211,6 @@ Add don't read file '.swp'.
 This time update be about user securities 🔒
 1. Now, You can find files only Markdown file, Python file, text file, LICENSE file, Ruby file, Unix command man file. but You can add readable file list. That's add readable file list at number 69 of exec.py file 😃
 2. 또한, 사용자가 텍스트로 읽을 수 없거나 보안이 요구되는 디렉토리를 ft가 못 읽도록 설정하였습니다. ft가 못 읽는 디렉토리는 .git, .github, node_modules, .vscode, build 가 있습니다. 또한, ft가 아예 읽을 수 없도록 하는 파일은 .env, .localized, .gitignore 가 있습니다.
+
+### v8.0.1
+Remove test.txt, Etc bugs fixed.
