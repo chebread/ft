@@ -3,7 +3,7 @@ from clint.textui import *
 import os.path
 import sys
 import os
-import time
+#import time
 # Time look
 #start = time.time()
 # Global variable
