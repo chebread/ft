@@ -217,3 +217,6 @@ Remove test.txt, Etc bugs fixed.
 
 ### v8.0.2
 Changed the clint module used to use color when printing output to the rich module.
+
+### v8.0.3
+Change doc internal file format from md to txt

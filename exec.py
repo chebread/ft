@@ -130,10 +130,10 @@ def TextUpper(text):
 def ManHelp():
     ManVer()
     now = NowDir()
-    help_file = now + "/doc/help.md"
+    help_file = now + "/doc/help.txt"
     isfile = Isfile(help_file)
     if isfile == -1:
-        print("Error: No help.md file")
+        print("Error: No help.txt file")
         return -1
     file = open(help_file, "rb")
     load = file.read()
@@ -141,10 +141,10 @@ def ManHelp():
     print(load.decode(encoding="utf-8")) # Prints
 def ManVer():
     now = NowDir()
-    ver_file = now + "/doc/version.md"
+    ver_file = now + "/doc/version.txt"
     isfile = Isfile(ver_file)
     if isfile == -1:
-        print("Error: No version.md file")
+        print("Error: No version.txt file")
         return -1
     file = open(ver_file, "rb")
     load = file.read()
@@ -154,10 +154,10 @@ def ManVer():
 def ManIndexErrorHelp(flag):
     print("error: No '%s' flags"%flag)
     now = NowDir()
-    err_file = now + "/doc/error_help.md"
+    err_file = now + "/doc/error_help.txt"
     isfile = Isfile(err_file)
     if isfile == -1:
-        print("Error: No error_help.md file")
+        print("Error: No error_help.txt file")
         return -1
     file = open(err_file, "rb")
     load = file.read()
