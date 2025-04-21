@@ -14,7 +14,7 @@
 
 ### USAGE 🏠
 
-#### `ft [FLAGS/<text>] [OPPTIONS/<path>]`
+#### `ft [FLAGS/<text>] [OPTIONS/<path>]`
 This basics form is **find** a string in a file and a string in among the files in the directory. 🤩
 
 ### Tips of USAGE
@@ -30,7 +30,7 @@ Prints **help** information 😝
 #### `ft -V` or `ft --version`
 Prints the information **version** of `ft` 😗
 
-### OPPTIONS
+### OPTIONS
 
 #### `ft <text> !` or `ft <text> '*'` or `ft <text or not blank> (blank)`
 Entering `!`, `*` in `(path)` allows you to find for a string in files in the directory you **currently** belong to 😌
@@ -60,7 +60,7 @@ It mean is **files**
 #### White 🐮
 It mean is a **number**
 
-## Help
+<!-- ## Help
 
 ### ~~5.2 version shouldn't~~ -> **v6.0 was resolved in version** 🤩
 1. ~~If a directory exists inside a directories~~
@@ -77,10 +77,10 @@ It **find** for a string in **all files** in the directory you currently belong 
 ## Goal
 
 ### I will want to upload to Homebrew package 👻
-But It isn't **enough** level of completion 🥲
+But It isn't **enough** level of completion 🥲 -->
 
 ## Version
-✋Now version: **v8.0.1** (21/11/11) 🎇
+✋Now version: **v8.0.3** (25/04/21) 🎇
 
 ## License
-Use **MIT License** so everyone can use it 😉
+MIT LICENSE &copy; 2021-2025 Cha Haneum

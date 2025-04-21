@@ -220,3 +220,4 @@ Changed the clint module used to use color when printing output to the rich modu
 
 ### v8.0.3
 Change doc internal file format from md to txt
+Fix minor things
