@@ -177,7 +177,7 @@ def Flags():
         if (cp_text.find('-v')==0 or cp_text.find('--v')==0):
             ManVer()
             return sys.exit(0)
-def Opptions():
+def Options():
     global path
     if (path.find("!")==0 or path.find("*")==0):
         path = os.getcwd()
@@ -234,8 +234,8 @@ try:
     path = PathInput()
     if len(sys.argv) > 3: # 다중 인자 입력 방지
         sys.exit(1)
-    # Opptions
-    Opptions()
+    # Options
+    Options()
     # Print Find
     Print(text, path)
     # Time Look

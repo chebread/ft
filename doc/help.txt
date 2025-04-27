@@ -5,7 +5,7 @@ FLAGS:
     -h, --help          Prints help information
     -V, --version       Prints version information
 
-OPPTIONS:
+OPTIONS:
     '!', (blank)        Find for a string in the currnet directory
 
 ARGS:
