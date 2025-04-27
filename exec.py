@@ -1,5 +1,5 @@
 # Finding Text at file and directory
-from clint.textui import *
+from rich.console import Console
 import os.path
 import sys
 import os
@@ -7,6 +7,7 @@ import os
 # Time look
 #start = time.time()
 # Global variable
+console = Console()
 exts = [] # 찾은 결과 값을 저장해요
 count = 0 # 반복횟수를 저장해요
 
@@ -148,7 +149,8 @@ def ManVer():
     file = open(ver_file, "rb")
     load = file.read()
     file.close()
-    print(colored.green(load.decode(encoding="utf-8")[:2]) + ' ' + load.decode(encoding="utf-8")[3:]) # Prints
+    print(load.decode(encoding="utf-8")[:2] + ' ' + load.decode(encoding="utf-8")[3:]) # Prints
+    
 def ManIndexErrorHelp(flag):
     print("error: No '%s' flags"%flag)
     now = NowDir()
@@ -214,10 +216,10 @@ def Print(text, path):
                             list_leng = len("".join(dir[i-1]).replace(path+'/', "").split('/'))
                             for j in range(0, list_leng):
                                 if j <= list_leng-2:
-                                    print(colored.blue("".join(dir[i-1]).replace(path+'/', "").split('/')[j]), end="/")
-                            print(colored.green("".join(dir[i-1]).replace(path+'/', "").split('/')[j]))
+                                    console.print("".join(dir[i-1]).replace(path+'/', "").split('/')[j], style="blue", end="/")
+                            console.print("".join(dir[i-1]).replace(path+'/', "").split('/')[j], style="green")
                         else:
-                            print(colored.yellow("".join(dir[i-1]).replace(path+'/', "")))
+                            console.print("".join(dir[i-1]).replace(path+'/', ""), style="yellow")
                     print(i)
     except IndexError:
         pass

@@ -214,3 +214,6 @@ This time update be about user securities 🔒
 
 ### v8.0.1
 Remove test.txt, Etc bugs fixed.
+
+### v8.1.0
+Changed the clint module used to use color when printing output to the rich module.
