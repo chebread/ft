@@ -248,3 +248,8 @@ except IndexError: # sys.argv의 인자가 충분히 제공 되지 않았을때
         Print(text, path)
         #Time Look
         #print("ExecTime: ", time.time() - start)
+
+# (0): rich text를 읽지 않게끔 설정하기
+# (0): pip로 설치가능하도록 설정하기
+# (0): man기능 추가하기
+# (0): doc -v이렇게 하는거는 별로임
