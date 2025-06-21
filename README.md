@@ -47,7 +47,7 @@ The file you are looking for is not found.
 The file you are looking for is found.
 
 ### Return color of `ft`
-#### Blue 🧢
+#### Blue
 It mean is **directories** 
 
 #### White
