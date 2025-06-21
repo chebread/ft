@@ -221,3 +221,7 @@ Changed the clint module used to use color when printing output to the rich modu
 ### v8.0.3
 Change doc internal file format from md to txt
 Fix minor things
+
+### v9.0
+- Rewrote the program while maintaining the core functionality using the `argparse` standard Python library
+- Configured the program to read only plain text

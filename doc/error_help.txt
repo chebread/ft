@@ -1,5 +1,4 @@
-
 USAGE:
-    ft [FLAGS/<text>] [OPPTIONS/<path>]
+    ft [FLAGS] [OPTIONS] [<text>] [<path>]
 
 For more information try `-h` or `--help`
