@@ -57,4 +57,4 @@ It mean is **files**
 Now version: **9.0** (25/06/21)
 
 ## License
-MIT LICENSE &copy; 2021-2025 Cha Haneum
+MIT LICENSE &copy; 2021-2026 Cha Haneum
