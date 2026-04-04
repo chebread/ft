@@ -53,8 +53,15 @@ It mean is **directories**
 #### White
 It mean is **files**
 
+## Awards
+- 2021 Student Division / Special Prize OSS Development Competition Organizing Committee Chairman's Award
+    - View details: https://www.oss.kr/dev_competition_activities/show/d47d0b01-f1f9-4b64-a8f6-aa780f86577b
+    - Award Interview Video: https://youtu.be/Y0oLDKCUn4U?si=JdQr68DT0NOAbs-O&t=2158
+
 ## Version
 Now version: **9.0** (25/06/21)
 
 ## License
-MIT LICENSE &copy; 2021-2026 Cha Haneum
+Copyright &copy; 2021-2026 Cha Haneum
+
+This project is licensed under the MIT License.
